@@ -1,6 +1,20 @@
 /*
 Make the document fill the whole viewport, this overrides any weird defaults that browsers might have.
 */
+html, body {
+	height: 100%
+}
+
+body {
+	display: flex;
+	flex-direction: column;
+}
+
+#container1 {
+	flex: auto 1 1;
+}
+
+
 /* html, body, figure {
 	width: 100%;
 	padding: 0;
@@ -21,7 +35,7 @@ Make the document fill the whole viewport, this overrides any weird defaults tha
 	/* font-family: sans-serif; */
 /* } */
 
-body {
+/* body {
   margin: 0 auto;
 	height: 100%
   max-width: 50em;
@@ -30,15 +44,15 @@ body {
 
 h1 {
   text-align: center;
-}
+} */
 
 /* svg {
 	display: block;
   margin: auto;
 } */
 
-#container1 {
+/* #container1 {
 	width: auto;
 	height: 100vh;
 	position: relative;
-}
+} */

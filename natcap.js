@@ -46,9 +46,10 @@ series.forEach(function(item){ //
 });
 
 // render map
-new Datamap({
+map = new Datamap({
     element: document.getElementById('container1'),
     projection: 'mercator', // big world map
+    responsive: true,
     // countries don't listed in dataset will be painted with this color
     fills: { defaultFill: '#F5F5F5' },
     data: dataset,
@@ -76,3 +77,5 @@ new Datamap({
         }
     }
 });
+
+window.addEventListener('resize', event => map.resize());
