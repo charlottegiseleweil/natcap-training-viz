@@ -13,7 +13,7 @@ NatCap's training program teaches ecosystem services approaches to multiple audi
 
 ## Initial Sketch
 
-<img src="Sketches/InitialSketch.png" width=750>
+<img src="Sketches/InitialSketch.png">
 
 ## Wireframe in Tableau
 
