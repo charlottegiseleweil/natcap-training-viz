@@ -47,7 +47,7 @@ d3.csv("processed_Data.csv", rowConverter, (data) => {
       fills: { defaultFill: '#F5F5F5' },
       data: dataset,
       geographyConfig: {
-          borderColor: '#DEDEDE',
+          borderColor: 'darkgray',
           highlightBorderWidth: 2,
           // don't change color on mouse hover
           highlightFillColor: function(geo) {
@@ -80,11 +80,11 @@ function changeYear(year) {
     let dataset = {};
 
     // Create color palette (by scaling min/max series-value to a colormap)
-    let onlyValues = data.map(function(obj){ return obj.trainees; });
-    let minValue = Math.min.apply(null, onlyValues),
+    var onlyValues = data.map(function(obj){ return obj.trainees; });
+    var minValue = Math.min.apply(null, onlyValues),
             maxValue = Math.max.apply(null, onlyValues);
 
-    let paletteScale = d3.scale.log()
+    var paletteScale = d3.scale.log()
             .domain([minValue,maxValue])
             .range(["#EFEFFF","#02386F"]); // blue color
 
@@ -98,7 +98,7 @@ function changeYear(year) {
     // Fill dataset in appropriate format
     data.forEach(function(item){ //
         // item example value ["USA", 70]
-        let iso = item.country,
+        var iso = item.country,
                 value = item.trainees;
         dataset[iso] = { numberOfThings: value, fillColor: paletteScale(value) };
     });
@@ -110,7 +110,8 @@ function changeYear(year) {
 var btnContainer = document.getElementById("years");
 
 // Get all buttons with class="btn" inside the container
-var btns = btnContainer.getElementsByClassName("btn");
+var btns = btnContainer.getElementsByClassName("year");
+console.log(btnContainer)
 
 // Loop through the buttons and add the active class to the current/clicked button
 for (var i = 0; i < btns.length; i++) {
