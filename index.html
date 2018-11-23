@@ -9,7 +9,8 @@
   <title>NatCap Training Viz</title>
 
   <!-- Link the styles. -->
-  <link rel="stylesheet" href="style.css"/>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="w3.css" />
 </head>
 
 <body>
@@ -25,6 +26,26 @@
   <script src="//cdnjs.cloudflare.com/ajax/libs/datamaps/0.5.8/datamaps.all.hires.js"></script>
 
   <!-- Create the viz. -->
+
+  <div class="w3-sidebar w3-bar-block w3-dark-grey w3-animate-left" style="display:none" id="mySidebar">
+    <button class="w3-bar-item w3-button w3-large" onclick="w3_close()">&times;</button>
+      <a href="#" class="w3-bar-item w3-button">Link 1</a>
+      <a href="#" class="w3-bar-item w3-button">Link 2</a>
+      <a href="#" class="w3-bar-item w3-button">Link 3</a>
+  </div>
+
+  <div>
+    <button class="w3-button w3-large" onclick="w3_open()">&#9776; Basic Info</button>
+  </div>
+
+  <ul id="years">
+    <li><a class='year' href="#" onclick="changeYear(2013);">2013</a></li>
+    <li><a class='year' href="#" onclick="changeYear(2014);">2014</a></li>
+    <li><a class='year' href="#" onclick="changeYear(2015);">2015</a></li>
+    <li><a class='year' href="#" onclick="changeYear(2016);">2016</a></li>
+    <li><a class='year' href="#" onclick="changeYear(2017);">2017</a></li>
+    <li><a class='year active' href="#" onclick="changeYear(2018);">2018</a></li>
+  </ul>
   <script src="natcap.js"></script>
 </body>
 
