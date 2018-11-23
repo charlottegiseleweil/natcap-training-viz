@@ -1,11 +1,18 @@
+let selectedYear = 2018
+
 let rowConverter = (d) => {
   return {
     country: d.Country,
+    year: +d.Year,
     trainees: +d.Number_of_Participants
   }
 }
 
-d3.csv("data2018.csv", rowConverter, (data) => {
+d3.csv("processed_Data.csv", rowConverter, (data) => {
+  // console.log(data)
+
+  data = data.filter(obj => obj.year == selectedYear && obj.trainees > 0)
+
   // console.log(data)
 
   var dataset = {};
