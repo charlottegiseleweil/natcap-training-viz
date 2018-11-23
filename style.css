@@ -1,22 +1,30 @@
 /*
 Make the document fill the whole viewport, this overrides any weird defaults that browsers might have.
 */
-html, body, figure {
+/* html, body, figure {
 	width: 100%;
 	padding: 0;
 	margin: 0;
 	border: 0;
-}
+} */
 
 /* Default font and size */
-body {
-	width: 100vw;
-	height: 100vh;
+/* body { */
+	/* width: 100vw;
+	height: 100vh; */
+	/* margin: 0 auto; */
 
 	/* background behind the plot */
-	background: white;
+	/* background: white; */
 
 	/* default text */
+	/* font-family: sans-serif; */
+/* } */
+
+body {
+  margin: 0 auto;
+	height: 100%
+  max-width: 50em;
 	font-family: sans-serif;
 }
 
@@ -24,7 +32,13 @@ h1 {
   text-align: center;
 }
 
-svg {
+/* svg {
 	display: block;
   margin: auto;
+} */
+
+#container1 {
+	width: auto;
+	height: 100vh;
+	position: relative;
 }
