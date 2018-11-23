@@ -9,29 +9,28 @@ let rowConverter = (d) => {
 }
 
 d3.csv("processed_Data.csv", rowConverter, (data) => {
-  // console.log(data)
-
   data = data.filter(obj => obj.year == selectedYear && obj.trainees > 0)
 
-  // console.log(data)
-
+  // Datamaps expect data in format:
   var dataset = {};
+
+  // Create color palette (by scaling min/max series-value to a colormap)
   var onlyValues = data.map(function(obj){ return obj.trainees; });
   var minValue = Math.min.apply(null, onlyValues),
           maxValue = Math.max.apply(null, onlyValues);
-
-  // console.log(onlyValues)
 
   var paletteScale = d3.scale.log()
           .domain([minValue,maxValue])
           .range(["#EFEFFF","#02386F"]); // blue color
 
-  var t = d3.scale.threshold().domain([0, 0.5, 1]).range(['a', 'b', 'c', 'd']);
+  // Manual color mapping for weird distributions
+  // var t = d3.scale.threshold().domain([0, 0.5, 1]).range(['a', 'b', 'c', 'd']);
   // console.log(t(-0.1))
   // console.log(t(0.3))
   // console.log(t(0.8))
   // console.log(t(1.3))
 
+  // Fill dataset in appropriate format
   data.forEach(function(item){ //
       // item example value ["USA", 70]
       var iso = item.country,
@@ -39,8 +38,7 @@ d3.csv("processed_Data.csv", rowConverter, (data) => {
       dataset[iso] = { numberOfThings: value, fillColor: paletteScale(value) };
   });
 
-  // console.log(dataset)
-
+  // Render map
   map = new Datamap({
       element: document.getElementById('container1'),
       projection: 'mercator', // big world map
@@ -59,7 +57,7 @@ d3.csv("processed_Data.csv", rowConverter, (data) => {
           highlightBorderColor: '#B7B7B7',
           // show desired information in tooltip
           popupTemplate: function(geo, data) {
-              // don't show tooltip if country don't present in dataset
+              // If country is not in the data it means there are no trainees there
               if (!data) { return ['<div class="hoverinfo">',
                   '<strong>', geo.properties.name, '</strong>',
                   '<br>Trainees: <strong>', 0, '</strong>',
@@ -74,84 +72,54 @@ d3.csv("processed_Data.csv", rowConverter, (data) => {
   });
 });
 
-// // example data from server
-// var series = [
-//     ["BLR",75],["BLZ",43],["RUS",50],["RWA",88],["SRB",21],["TLS",43],
-//     ["REU",21],["TKM",19],["TJK",60],["ROU",4],["TKL",44],["GNB",38],
-//     ["GUM",67],["GTM",2],["SGS",95],["GRC",60],["GNQ",57],["GLP",53],
-//     ["JPN",59],["GUY",24],["GGY",4],["GUF",21],["GEO",42],["GRD",65],
-//     ["GBR",14],["GAB",47],["SLV",15],["GIN",19],["GMB",63],["GRL",56],
-//     ["ERI",57],["MNE",93],["MDA",39],["MDG",71],["MAF",16],["MAR",8],
-//     ["MCO",25],["UZB",81],["MMR",21],["MLI",95],["MAC",33],["MNG",93],
-//     ["MHL",15],["MKD",52],["MUS",19],["MLT",69],["MWI",37],["MDV",44],
-//     ["MTQ",13],["MNP",21],["MSR",89],["MRT",20],["IMN",72],["UGA",59],
-//     ["TZA",62],["MYS",75],["MEX",80],["ISR",77],["FRA",54],["IOT",56],
-//     ["SHN",91],["FIN",51],["FJI",22],["FLK",4],["FSM",69],["FRO",70],
-//     ["NIC",66],["NLD",53],["NOR",7],["NAM",63],["VUT",15],["NCL",66],
-//     ["NER",34],["NFK",33],["NGA",45],["NZL",96],["NPL",21],["NRU",13],
-//     ["NIU",6],["COK",19],["XKX",32],["CIV",27],["CHE",65],["COL",64],
-//     ["CHN",16],["CMR",70],["CHL",15],["CCK",85],["CAN",76],["COG",20],
-//     ["CAF",93],["COD",36],["CZE",77],["CYP",65],["CXR",14],["CRI",31],
-//     ["CUW",67],["CPV",63],["CUB",40],["SWZ",58],["SYR",96],["SXM",31]];
-//
-//
-// // Datamaps expect data in format:
-// // { "USA": { "fillColor": "#42a844", numberOfWhatever: 75},
-// //   "FRA": { "fillColor": "#8dc386", numberOfWhatever: 43 } }
-// var dataset = {};
-//
-// // We need to colorize every country based on "numberOfWhatever"
-// // colors should be uniq for every value.
-// // For this purpose we create palette(using min/max series-value)
-// var onlyValues = series.map(function(obj){ return obj[1]; });
-// var minValue = Math.min.apply(null, onlyValues),
-//         maxValue = Math.max.apply(null, onlyValues);
-//
-// // create color palette function
-// // color can be whatever you wish
-// var paletteScale = d3.scale.linear()
-//         .domain([minValue,maxValue])
-//         .range(["#EFEFFF","#02386F"]); // blue color
-//
-// // fill dataset in appropriate format
-// series.forEach(function(item){ //
-//     // item example value ["USA", 70]
-//     var iso = item[0],
-//             value = item[1];
-//     dataset[iso] = { numberOfThings: value, fillColor: paletteScale(value) };
-// });
-//
-// // render map
-// map = new Datamap({
-//     element: document.getElementById('container1'),
-//     projection: 'mercator', // big world map
-//     responsive: true,
-//     // countries don't listed in dataset will be painted with this color
-//     fills: { defaultFill: '#F5F5F5' },
-//     data: dataset,
-//     geographyConfig: {
-//         borderColor: '#DEDEDE',
-//         highlightBorderWidth: 2,
-//         // don't change color on mouse hover
-//         highlightFillColor: function(geo) {
-//             return geo['fillColor'] || '#F5F5F5';
-//         },
-//         // only change border
-//         highlightBorderColor: '#B7B7B7',
-//         // show desired information in tooltip
-//         popupTemplate: function(geo, data) {
-//             // don't show tooltip if country don't present in dataset
-//             if (!data) { return ['<div class="hoverinfo">',
-//                 '<strong>', geo.properties.name, '</strong>',
-//                 '<br>Trainees: <strong>', 0, '</strong>',
-//                 '</div>'].join(''); }
-//             // tooltip content
-//             return ['<div class="hoverinfo">',
-//                 '<strong>', geo.properties.name, '</strong>',
-//                 '<br>Trainees: <strong>', data.numberOfThings, '</strong>',
-//                 '</div>'].join('');
-//         }
-//     }
-// });
+function changeYear(year) {
+  d3.csv("processed_Data.csv", rowConverter, (data) => {
+    data = data.filter(obj => obj.year == year && obj.trainees > 0)
 
+    // Datamaps expect data in format:
+    let dataset = {};
+
+    // Create color palette (by scaling min/max series-value to a colormap)
+    let onlyValues = data.map(function(obj){ return obj.trainees; });
+    let minValue = Math.min.apply(null, onlyValues),
+            maxValue = Math.max.apply(null, onlyValues);
+
+    let paletteScale = d3.scale.log()
+            .domain([minValue,maxValue])
+            .range(["#EFEFFF","#02386F"]); // blue color
+
+    // Manual color mapping for weird distributions
+    // var t = d3.scale.threshold().domain([0, 0.5, 1]).range(['a', 'b', 'c', 'd']);
+    // console.log(t(-0.1))
+    // console.log(t(0.3))
+    // console.log(t(0.8))
+    // console.log(t(1.3))
+
+    // Fill dataset in appropriate format
+    data.forEach(function(item){ //
+        // item example value ["USA", 70]
+        let iso = item.country,
+                value = item.trainees;
+        dataset[iso] = { numberOfThings: value, fillColor: paletteScale(value) };
+    });
+
+    map.updateChoropleth(dataset)
+  });
+}
+
+var btnContainer = document.getElementById("years");
+
+// Get all buttons with class="btn" inside the container
+var btns = btnContainer.getElementsByClassName("btn");
+
+// Loop through the buttons and add the active class to the current/clicked button
+for (var i = 0; i < btns.length; i++) {
+  btns[i].addEventListener("click", function() {
+    var current = document.getElementsByClassName("active");
+    current[0].className = current[0].className.replace(" active", "");
+    this.className += " active";
+  });
+}
+
+// For map responsiveness
 window.addEventListener('resize', event => map.resize());
