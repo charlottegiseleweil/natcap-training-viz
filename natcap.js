@@ -45,6 +45,7 @@ map = new Datamap({
 
 // Color according to the deafult year
 changeYear(defaultYear)
+<<<<<<< HEAD
 
 function changeYear(year) {
   d3.csv("Data/processed_Data.csv", rowConverter, (data) => {
@@ -69,6 +70,32 @@ function changeYear(year) {
     // console.log(t(0.8))
     // console.log(t(1.3))
 
+=======
+
+function changeYear(year) {
+  d3.csv("Data/processed_Data.csv", rowConverter, (data) => {
+    data = data.filter(obj => obj.year == year && obj.trainees > 0)
+
+    // Datamaps expect data in format:
+    let dataset = {};
+
+    // Create color palette (by scaling min/max series-value to a colormap)
+    var onlyValues = data.map(function(obj){ return obj.trainees; });
+    var minValue = Math.min.apply(null, onlyValues),
+            maxValue = Math.max.apply(null, onlyValues);
+
+    var paletteScale = d3.scale.log()
+            .domain([minValue,maxValue])
+            .range(["#EFEFFF","#02386F"]); // blue color
+
+    // Manual color mapping for weird distributions
+    // var t = d3.scale.threshold().domain([0, 0.5, 1]).range(['a', 'b', 'c', 'd']);
+    // console.log(t(-0.1))
+    // console.log(t(0.3))
+    // console.log(t(0.8))
+    // console.log(t(1.3))
+
+>>>>>>> 8b072f0faf4068fea30f3b16f7eebf1b39cb48cf
     // Fill dataset in appropriate format
     data.forEach(function(item){ //
         // item example value ["USA", 70]
@@ -95,6 +122,7 @@ for (var i = 0; i < btns.length; i++) {
     this.className += " active";
   });
 }
+<<<<<<< HEAD
 
 function w3_open() {
     document.getElementById("mySidebar").style.display = "block";
@@ -106,6 +134,12 @@ function w3_close() {
 // For map responsiveness
 window.addEventListener('resize', event => map.resize());
 
+=======
+
+// For map responsiveness
+window.addEventListener('resize', event => map.resize());
+
+>>>>>>> 8b072f0faf4068fea30f3b16f7eebf1b39cb48cf
 // d3.csv("Data/processed_Data.csv", rowConverter, (data) => {
 //   data = data.filter(obj => obj.year == selectedYear && obj.trainees > 0)
 //
