@@ -2,8 +2,8 @@
 Make the document fill the whole viewport, this overrides any weird defaults that browsers might have.
 */
 html, body {
-	height: 100%
-	overflow: hidden
+	height: 100%;
+	margin: 0;
 }
 
 body {
@@ -13,7 +13,35 @@ body {
 }
 
 #container1 {
-	flex: auto 1 1;
+	height:100%;
+	width:100%;
+	position: relative;
+}
+
+.custom{
+	margin-top: 15px;
+	margin-left: 10px;
+}
+
+.off{
+	display:none;
+}
+
+.more_info{
+	margin-left: 0;
+	margin-right: auto;
+	padding: 0;
+	margin-top: 15px;
+	margin-left: 10px;
+	overflow: hidden;
+	background-color: #909090;
+	color:white;
+	position: fixed;
+	top: 0;
+	width: auto;
+	height:auto;
+	text-align: center;
+	border: 1px solid black;
 }
 
 ul {
@@ -22,6 +50,7 @@ ul {
     margin-right: auto;
 		padding: 0;
 		margin-top: 0;
+		margin-left: 10px;
     overflow: hidden;
     background-color: #909090;
     position: fixed;
