@@ -2,117 +2,122 @@
 Make the document fill the whole viewport, this overrides any weird defaults that browsers might have.
 */
 html, body {
-	height: 100%;
-	margin: 0;
+  height: 100%;
+  margin: 0;
 }
 
 body {
-	background-color: #E0E0E0;
-	display: flex;
-	flex-direction: column;
+  background-color: #E0E0E0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
 }
 
-#container1 {
-	height:100%;
-	width:100%;
-	position: relative;
+#mapContainer {
+  height: 50%;
+  width: 50%;
+  /* position: relative; */
+  display: flex;
 }
 
-.custom{
-	margin-top: 15px;
-	margin-left: 10px;
+#chartContainer {
+  height: 75%;
+  width: 75%;
+  display: flex;
 }
 
-.off{
-	display:none;
+.custom {
+  margin-top: 15px;
+  margin-left: 10px;
 }
 
-.more_info{
-	margin-left: 0;
-	margin-right: auto;
-	padding: 0;
-	margin-top: 15px;
-	margin-left: 10px;
-	overflow: hidden;
-	background-color: #909090;
-	color:white;
-	position: fixed;
-	top: 0;
-	width: auto;
-	height:auto;
-	text-align: center;
-	border: 1px solid black;
+.off {
+  display: none;
+}
+
+.more_info {
+  margin-left: 0;
+  margin-right: auto;
+  padding: 0;
+  margin-top: 15px;
+  margin-left: 10px;
+  overflow: hidden;
+  background-color: #909090;
+  color: white;
+  position: fixed;
+  top: 0;
+  width: auto;
+  height: auto;
+  text-align: center;
+  border: 1px solid black;
 }
 
 ul {
-    list-style-type: none;
-    margin-left: 0;
-    margin-right: auto;
-		padding: 0;
-		margin-top: 0;
-		margin-left: 10px;
-    overflow: hidden;
-    background-color: #909090;
-    position: fixed;
-    bottom: 0;
-    width: auto;
-		text-align: center;
-		border: 1px solid black;
+  list-style-type: none;
+  margin-left: 0;
+  margin-right: auto;
+  padding: 0;
+  margin-top: 0;
+  margin-left: 10px;
+  overflow: hidden;
+  background-color: #909090;
+  position: fixed;
+  bottom: 0;
+  width: auto;
+  text-align: center;
+  border: 1px solid black;
 }
 
 li {
-    float: left;
-		border-right:1px solid black;
+  float: left;
+  border-right: 1px solid black;
 }
 
 li:last-child {
-    border-right: none;
+  border-right: none;
 }
 
-
 li a {
-    display: block;
-    color: white;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
 }
 
 li a:hover:not(.active) {
-    background-color: #555;
+  background-color: #555;
 }
 
-.year {
-}
+.year {}
 
 .active, .year:hover {
   background-color: #607B8B;
 }
 
 li {
-    float: left;
-		border-right:1px solid #bbb;
+  float: left;
+  border-right: 1px solid #bbb;
 }
 
 li:last-child {
-    border-right: none;
+  border-right: none;
 }
 
-
 li a {
-    display: block;
-    color: white;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
 }
 
 li a:hover:not(.active) {
-    background-color: #555;
+  background-color: #555;
 }
 
-.year {
-}
+.year {}
 
 .active, .year:hover {
   background-color: #607B8B;
