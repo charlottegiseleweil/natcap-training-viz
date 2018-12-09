@@ -1,0 +1,298 @@
+Year,COUNTRY,TYPE,Count
+2013,Argentina,Nodal,27
+2013,Argentina,Partner,1
+2013,Australia,Public,6
+2013,Belgium,Regional,1
+2013,Brasil,Partner,1
+2013,Brazil,Nodal,1
+2013,Brazil,Partner,6
+2013,Brazil,Public,1
+2013,Bulgaria,Public,1
+2013,Cambodia,Partner,24
+2013,Cameroon,Public,1
+2013,Canada,Nodal,1
+2013,Canada,Partner,18
+2013,Chile,Nodal,1
+2013,Chile,Partner,23
+2013,China,Public,2
+2013,China,Regional,1
+2013,Colombia,Partner,5
+2013,Costa Rica,Partner,2
+2013,Denmark,Public,2
+2013,Ecuador,Partner,4
+2013,Georgia,Regional,2
+2013,Germany,Public,5
+2013,Guatemala,Partner,2
+2013,Hungary,Public,1
+2013,Indonesia,Public,3
+2013,Italy,Regional,2
+2013,Japan,Public,1
+2013,Kenya,Public,1
+2013,Kyrgystan,Partner,1
+2013,Laos,Public,1
+2013,Malaysia,Public,2
+2013,Mexico,Nodal,1
+2013,Mexico,Partner,3
+2013,Mexico,Public,2
+2013,Mongolia,Partner,20
+2013,Mozambique,Partner,24
+2013,Netherlands,Public,1
+2013,New Zealand,Public,2
+2013,New Zealand,Regional,1
+2013,Nicaragua,Partner,7
+2013,Panama,Partner,1
+2013,Peru,Partner,44
+2013,Philippines,Public,1
+2013,Portugal,Regional,1
+2013,República Dominicana,Partner,3
+2013,Singapore,Public,1
+2013,Spain,Intro,30
+2013,Sweden,Public,1
+2013,Switzerland,Public,1
+2013,Switzerland,Regional,3
+2013,USA,Intro,25
+2013,USA,Nodal,40
+2013,USA,Partner,78
+2013,USA,Public,1
+2013,USA,Webinar,15
+2013,United Kingdom,Intro,76
+2013,United Kingdom,Public,1
+2013,United Kingdom,Regional,66
+2013,United Kingdom,Webinar,10
+2013,Vietnam,Partner,5
+2014,Barbados,Partner,2
+2014,Belgian,Regional,1
+2014,Bolivia,Nodal,1
+2014,Brazil,Intro,4
+2014,Cambodia,Intro,1
+2014,Canada,Intro,3
+2014,Canada,Nodal,1
+2014,Chile,Intro,1
+2014,Chile,Regional,1
+2014,China,Intro,2
+2014,China,Regional,1
+2014,Colombia,Intro,2
+2014,Colombia,Nodal,1
+2014,Costa Rica,Intro,4
+2014,Costa Rica,Nodal,4
+2014,Ecuador,Intro,2
+2014,France,Intro,1
+2014,France,Nodal,1
+2014,France,Regional,2
+2014,Germany,Regional,1
+2014,Greece,Regional,1
+2014,India,Intro,1
+2014,India,Regional,61
+2014,Indonesia,Intro,1
+2014,Israel,Intro,1
+2014,Italy,Intro,1
+2014,Italy,Regional,3
+2014,Japan,Intro,1
+2014,Korea,Intro,24
+2014,Lithuania,Intro,2
+2014,Mexico,Intro,5
+2014,Mexico,Webinar,7
+2014,Nepal,Intro,1
+2014,Netherlands,Intro,4
+2014,New Zealand,Intro,1
+2014,Norway,Intro,1
+2014,Philippines,Intro,3
+2014,Portugal,Intro,1
+2014,Portugal,Regional,8
+2014,Spain,Regional,8
+2014,Trinidad & Tobago,Webinar,18
+2014,Trinidad and Tobago,Intro,1
+2014,USA,Intro,40
+2014,USA,Nodal,23
+2014,USA,Partner,23
+2014,USA,Webinar,3
+2014,United Kingdom,Intro,1
+2014,United Kingdom,Nodal,1
+2014,Vietnam,Intro,1
+2015,Austria,Nodal,2
+2015,Bangladesh,Partner,1
+2015,Barbados,Partner,19
+2015,Bhutan,Partner,23
+2015,Botswana,Partner,1
+2015,Cambodia,Partner,7
+2015,China,Partner,1
+2015,Colombia,Intro,18
+2015,Ecuador,Partner,31
+2015,Egypt,Partner,1
+2015,Ethiopia,Partner,6
+2015,France,Nodal,5
+2015,France,Partner,2
+2015,Germany,Nodal,5
+2015,Ghana,Partner,2
+2015,Hungary,Nodal,1
+2015,Indonesia,Partner,3
+2015,Israel,Partner,1
+2015,Italy,Nodal,15
+2015,Jordan,Partner,1
+2015,Kazakhstan,Partner,1
+2015,Kenya,Partner,40
+2015,Laos,Partner,3
+2015,Malaysia,Nodal,1
+2015,Malaysia,Partner,2
+2015,Mexico,Partner,4
+2015,Mexico,Webinar,9
+2015,Morocco,Partner,1
+2015,Myanmar,Partner,5
+2015,Netherlands,Nodal,1
+2015,Not sure Not an SAPECS person…,Partner,1
+2015,Philippines,Partner,2
+2015,Puerto Rico,Partner,1
+2015,Romania,Nodal,1
+2015,Slovenia,Nodal,2
+2015,South Africa,Partner,18
+2015,Sri Lanka,Partner,1
+2015,Switzerland,Nodal,24
+2015,Tanzania,Partner,1
+2015,Thailand,Partner,7
+2015,Tunisia,Nodal,5
+2015,UK,Nodal,1
+2015,USA,Intro,4
+2015,USA,Partner,6
+2015,USA,Seminar,14
+2015,USA,Webinar,9
+2015,United Arab Emirates,Nodal,1
+2015,Vietnam,Partner,3
+2015,Zimbabwe,Partner,1
+2016,Argentina,Symposium,1
+2016,Australia,Regional,3
+2016,Australia,Symposium,1
+2016,Bahamas,Symposium,2
+2016,Barbados,Symposium,2
+2016,Belize,Symposium,1
+2016,Benin,Regional,2
+2016,Bhutan,Symposium,2
+2016,Bolivia,Symposium,1
+2016,Brazil,Regional,1
+2016,Brazil,Symposium,3
+2016,Cambodia,Symposium,2
+2016,Canada,Regional,1
+2016,Canada,Symposium,5
+2016,China,Regional,1
+2016,China,Symposium,11
+2016,Colombia,Symposium,3
+2016,Ecuador,Symposium,1
+2016,Ethiopia,Regional,1
+2016,France,Regional,2
+2016,France,Symposium,2
+2016,Germany,Symposium,4
+2016,Guatemala,Regional,1
+2016,India,Regional,1
+2016,Indonesia,Regional,1
+2016,Indonesia,Symposium,2
+2016,Kyrgyzstan,Symposium,1
+2016,Malaysia,Regional,1
+2016,Malaysia,Symposium,1
+2016,Martinique,Symposium,1
+2016,Mexico,Partner,3
+2016,Mexico,Regional,2
+2016,Mexico,Symposium,3
+2016,Mongolia,Symposium,1
+2016,Mozambique,Partner,54
+2016,Mozambique,Symposium,6
+2016,New Zealand,Regional,1
+2016,Norway,Symposium,2
+2016,Panama,Regional,1
+2016,Peru,Symposium,1
+2016,Portugal,Symposium,1
+2016,Russia,Regional,1
+2016,South Africa,Regional,2
+2016,South Africa,Symposium,1
+2016,Suriname,Symposium,1
+2016,Swaziland,Regional,1
+2016,Sweden,Symposium,1
+2016,Switzerland,Symposium,6
+2016,Thailand,Regional,1
+2016,USA,Partner,14
+2016,USA,Symposium,140
+2016,United Kingdom,Regional,3
+2016,United Kingdom,Symposium,13
+2016,United States,Regional,17
+2016,Vietnam,Regional,2
+2017,Australia,Symposium,1
+2017,Bahamas,Symposium,2
+2017,Brazil,Symposium,2
+2017,Canada,Symposium,10
+2017,China,Partner,366
+2017,China,Symposium,15
+2017,Colombia,Symposium,4
+2017,Costa Rica,Symposium,1
+2017,Denmark,Symposium,1
+2017,Ecuador,Symposium,2
+2017,France,Symposium,3
+2017,Germany,Symposium,5
+2017,Indonesia,Symposium,2
+2017,Japan,Symposium,1
+2017,Madagascar,Symposium,2
+2017,Mexico,Symposium,1
+2017,Mozambique,Symposium,1
+2017,Nepal,Symposium,2
+2017,Nigeria,Symposium,1
+2017,Norway,Symposium,3
+2017,Portugal,Symposium,2
+2017,Romania,Partner,22
+2017,Russian Federation,Symposium,1
+2017,Seychelles,Symposium,1
+2017,Singapore,Symposium,1
+2017,South Africa,Symposium,1
+2017,South Korea,Symposium,4
+2017,Spain,Symposium,3
+2017,Sri Lanka,Symposium,1
+2017,Sweden,Symposium,6
+2017,Switzerland,Symposium,5
+2017,USA,Partner,4
+2017,USA,Regional,10
+2017,United Kingdom,Symposium,7
+2017,United States,Symposium,171
+2018,Australia,Symposium,7
+2018,Brazil,Partner,20
+2018,Brazil,Symposium,3
+2018,Canada,Symposium,6
+2018,Chile,Symposium,3
+2018,China,Partner,320
+2018,China,Symposium,23
+2018,Colombia,Symposium,3
+2018,Costa Rica,Symposium,2
+2018,Côte-d'Ivoire,Nodal,1
+2018,Ecuador,Symposium,1
+2018,Ethiopia,Nodal,1
+2018,France,Nodal,1
+2018,France,Symposium,2
+2018,Germany,Symposium,3
+2018,India,Symposium,2
+2018,Indonesia,Partner,1
+2018,Indonesia,Symposium,2
+2018,Israel,Symposium,1
+2018,Italy,Symposium,2
+2018,Jamaica,Symposium,1
+2018,Japan,Symposium,3
+2018,Kenya,Partner,2
+2018,Liberia,Symposium,1
+2018,Lithuania,Symposium,1
+2018,Mexico,Symposium,3
+2018,Mongolia,Partner,6
+2018,Mongolia,Symposium,7
+2018,Mozambique,Symposium,6
+2018,Myanmar,Partner,2
+2018,New Zealand,Symposium,1
+2018,Nigeria,Symposium,2
+2018,Pakistan,Partner,3
+2018,Peru,Partner,8
+2018,Romania,Partner,1
+2018,Russia,Partner,1
+2018,Singapore,Symposium,1
+2018,South Africa,Symposium,1
+2018,South Korea,Symposium,4
+2018,Spain,Symposium,3
+2018,Sri Lanka,Symposium,1
+2018,Sweden,Symposium,2
+2018,Switzerland,Nodal,5
+2018,Switzerland,Symposium,3
+2018,Tanzania,Partner,1
+2018,United Kingdom,Symposium,6
+2018,United States,Partner,4
+2018,United States,Symposium,167

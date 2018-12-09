@@ -1,0 +1,589 @@
+	Country	Year	Number of Participants
+0	Argentina	2013	28.0
+1	Argentina	2018	0.0
+2	Argentina	2015	0.0
+3	Argentina	2017	0.0
+4	Argentina	2016	1.0
+5	Argentina	2014	0.0
+6	Australia	2013	6.0
+7	Australia	2016	4.0
+8	Australia	2018	7.0
+9	Australia	2015	0.0
+10	Australia	2017	1.0
+11	Australia	2014	0.0
+12	Austria	2018	0.0
+13	Austria	2015	2.0
+14	Austria	2017	0.0
+15	Austria	2016	0.0
+16	Austria	2013	0.0
+17	Austria	2014	0.0
+18	Bahamas	2014	0.0
+19	Bahamas	2016	2.0
+20	Bahamas	2017	2.0
+21	Bahamas	2018	0.0
+22	Bahamas	2013	0.0
+23	Bahamas	2015	0.0
+24	Bangladesh	2018	0.0
+25	Bangladesh	2013	0.0
+26	Bangladesh	2014	0.0
+27	Bangladesh	2015	1.0
+28	Bangladesh	2017	0.0
+29	Bangladesh	2016	0.0
+30	Barbados	2013	0.0
+31	Barbados	2015	19.0
+32	Barbados	2018	0.0
+33	Barbados	2017	0.0
+34	Barbados	2014	2.0
+35	Barbados	2016	2.0
+36	Belgian	2014	1.0
+37	Belgian	2017	0.0
+38	Belgian	2018	0.0
+39	Belgian	2016	0.0
+40	Belgian	2013	0.0
+41	Belgian	2015	0.0
+42	Belgium	2017	0.0
+43	Belgium	2018	0.0
+44	Belgium	2016	0.0
+45	Belgium	2015	0.0
+46	Belgium	2013	1.0
+47	Belgium	2014	0.0
+48	Belize	2017	0.0
+49	Belize	2014	0.0
+50	Belize	2015	0.0
+51	Belize	2018	0.0
+52	Belize	2013	0.0
+53	Belize	2016	1.0
+54	Benin	2016	2.0
+55	Benin	2014	0.0
+56	Benin	2018	0.0
+57	Benin	2013	0.0
+58	Benin	2015	0.0
+59	Benin	2017	0.0
+60	Bhutan	2013	0.0
+61	Bhutan	2018	0.0
+62	Bhutan	2015	23.0
+63	Bhutan	2016	2.0
+64	Bhutan	2017	0.0
+65	Bhutan	2014	0.0
+66	Bolivia	2018	0.0
+67	Bolivia	2017	0.0
+68	Bolivia	2014	1.0
+69	Bolivia	2015	0.0
+70	Bolivia	2013	0.0
+71	Bolivia	2016	1.0
+72	Botswana	2016	0.0
+73	Botswana	2014	0.0
+74	Botswana	2018	0.0
+75	Botswana	2017	0.0
+76	Botswana	2015	1.0
+77	Botswana	2013	0.0
+78	Brasil	2017	0.0
+79	Brasil	2015	0.0
+80	Brasil	2018	0.0
+81	Brasil	2014	0.0
+82	Brasil	2016	0.0
+83	Brasil	2013	1.0
+84	Brazil	2016	4.0
+85	Brazil	2017	2.0
+86	Brazil	2014	4.0
+87	Brazil	2013	8.0
+88	Brazil	2015	0.0
+89	Brazil	2018	23.0
+90	Bulgaria	2016	0.0
+91	Bulgaria	2014	0.0
+92	Bulgaria	2018	0.0
+93	Bulgaria	2015	0.0
+94	Bulgaria	2013	1.0
+95	Bulgaria	2017	0.0
+96	Cambodia	2015	7.0
+97	Cambodia	2014	1.0
+98	Cambodia	2013	24.0
+99	Cambodia	2016	2.0
+100	Cambodia	2018	0.0
+101	Cambodia	2017	0.0
+102	Cameroon	2014	0.0
+103	Cameroon	2016	0.0
+104	Cameroon	2013	1.0
+105	Cameroon	2017	0.0
+106	Cameroon	2015	0.0
+107	Cameroon	2018	0.0
+108	Canada	2015	0.0
+109	Canada	2018	6.0
+110	Canada	2017	10.0
+111	Canada	2014	4.0
+112	Canada	2013	19.0
+113	Canada	2016	6.0
+114	Chile	2015	0.0
+115	Chile	2017	0.0
+116	Chile	2018	3.0
+117	Chile	2014	2.0
+118	Chile	2016	0.0
+119	Chile	2013	24.0
+120	China	2018	343.0
+121	China	2015	1.0
+122	China	2013	3.0
+123	China	2016	12.0
+124	China	2014	3.0
+125	China	2017	381.0
+126	Colombia	2016	3.0
+127	Colombia	2017	4.0
+128	Colombia	2013	5.0
+129	Colombia	2015	18.0
+130	Colombia	2014	3.0
+131	Colombia	2018	3.0
+132	Costa Rica	2018	2.0
+133	Costa Rica	2017	1.0
+134	Costa Rica	2013	2.0
+135	Costa Rica	2016	0.0
+136	Costa Rica	2015	0.0
+137	Costa Rica	2014	8.0
+138	Côte-d'Ivoire	2014	0.0
+139	Côte-d'Ivoire	2016	0.0
+140	Côte-d'Ivoire	2015	0.0
+141	Côte-d'Ivoire	2013	0.0
+142	Côte-d'Ivoire	2018	1.0
+143	Côte-d'Ivoire	2017	0.0
+144	Denmark	2016	0.0
+145	Denmark	2014	0.0
+146	Denmark	2013	2.0
+147	Denmark	2015	0.0
+148	Denmark	2017	1.0
+149	Denmark	2018	0.0
+150	Ecuador	2015	31.0
+151	Ecuador	2014	2.0
+152	Ecuador	2017	2.0
+153	Ecuador	2016	1.0
+154	Ecuador	2018	1.0
+155	Ecuador	2013	4.0
+156	Egypt	2017	0.0
+157	Egypt	2013	0.0
+158	Egypt	2018	0.0
+159	Egypt	2015	1.0
+160	Egypt	2014	0.0
+161	Egypt	2016	0.0
+162	Ethiopia	2013	0.0
+163	Ethiopia	2014	0.0
+164	Ethiopia	2016	1.0
+165	Ethiopia	2018	1.0
+166	Ethiopia	2017	0.0
+167	Ethiopia	2015	6.0
+168	France	2013	0.0
+169	France	2018	3.0
+170	France	2014	4.0
+171	France	2015	7.0
+172	France	2016	4.0
+173	France	2017	3.0
+174	Georgia	2014	0.0
+175	Georgia	2016	0.0
+176	Georgia	2018	0.0
+177	Georgia	2015	0.0
+178	Georgia	2017	0.0
+179	Georgia	2013	2.0
+180	Germany	2015	5.0
+181	Germany	2013	5.0
+182	Germany	2018	3.0
+183	Germany	2014	1.0
+184	Germany	2016	4.0
+185	Germany	2017	5.0
+186	Ghana	2018	0.0
+187	Ghana	2014	0.0
+188	Ghana	2015	2.0
+189	Ghana	2016	0.0
+190	Ghana	2013	0.0
+191	Ghana	2017	0.0
+192	Greece	2015	0.0
+193	Greece	2013	0.0
+194	Greece	2016	0.0
+195	Greece	2017	0.0
+196	Greece	2014	1.0
+197	Greece	2018	0.0
+198	Guatemala	2017	0.0
+199	Guatemala	2014	0.0
+200	Guatemala	2018	0.0
+201	Guatemala	2013	2.0
+202	Guatemala	2015	0.0
+203	Guatemala	2016	1.0
+204	Hungary	2015	1.0
+205	Hungary	2014	0.0
+206	Hungary	2016	0.0
+207	Hungary	2018	0.0
+208	Hungary	2013	1.0
+209	Hungary	2017	0.0
+210	India	2018	2.0
+211	India	2015	0.0
+212	India	2013	0.0
+213	India	2017	0.0
+214	India	2014	62.0
+215	India	2016	1.0
+216	Indonesia	2018	3.0
+217	Indonesia	2014	1.0
+218	Indonesia	2017	2.0
+219	Indonesia	2015	3.0
+220	Indonesia	2016	3.0
+221	Indonesia	2013	3.0
+222	Israel	2015	1.0
+223	Israel	2016	0.0
+224	Israel	2013	0.0
+225	Israel	2017	0.0
+226	Israel	2018	1.0
+227	Israel	2014	1.0
+228	Italy	2014	4.0
+229	Italy	2015	15.0
+230	Italy	2013	2.0
+231	Italy	2017	0.0
+232	Italy	2018	2.0
+233	Italy	2016	0.0
+234	Jamaica	2016	0.0
+235	Jamaica	2018	1.0
+236	Jamaica	2015	0.0
+237	Jamaica	2017	0.0
+238	Jamaica	2014	0.0
+239	Jamaica	2013	0.0
+240	Japan	2018	3.0
+241	Japan	2013	1.0
+242	Japan	2016	0.0
+243	Japan	2014	1.0
+244	Japan	2017	1.0
+245	Japan	2015	0.0
+246	Jordan	2017	0.0
+247	Jordan	2018	0.0
+248	Jordan	2014	0.0
+249	Jordan	2013	0.0
+250	Jordan	2016	0.0
+251	Jordan	2015	1.0
+252	Kazakhstan	2013	0.0
+253	Kazakhstan	2015	1.0
+254	Kazakhstan	2014	0.0
+255	Kazakhstan	2017	0.0
+256	Kazakhstan	2018	0.0
+257	Kazakhstan	2016	0.0
+258	Kenya	2015	40.0
+259	Kenya	2014	0.0
+260	Kenya	2016	0.0
+261	Kenya	2017	0.0
+262	Kenya	2013	1.0
+263	Kenya	2018	2.0
+264	Korea	2016	0.0
+265	Korea	2018	0.0
+266	Korea	2014	24.0
+267	Korea	2013	0.0
+268	Korea	2015	0.0
+269	Korea	2017	0.0
+270	Kyrgystan	2015	0.0
+271	Kyrgystan	2014	0.0
+272	Kyrgystan	2018	0.0
+273	Kyrgystan	2016	0.0
+274	Kyrgystan	2013	1.0
+275	Kyrgystan	2017	0.0
+276	Kyrgyzstan	2016	1.0
+277	Kyrgyzstan	2017	0.0
+278	Kyrgyzstan	2014	0.0
+279	Kyrgyzstan	2015	0.0
+280	Kyrgyzstan	2018	0.0
+281	Kyrgyzstan	2013	0.0
+282	Laos	2017	0.0
+283	Laos	2015	3.0
+284	Laos	2016	0.0
+285	Laos	2018	0.0
+286	Laos	2014	0.0
+287	Laos	2013	1.0
+288	Liberia	2013	0.0
+289	Liberia	2018	1.0
+290	Liberia	2015	0.0
+291	Liberia	2016	0.0
+292	Liberia	2014	0.0
+293	Liberia	2017	0.0
+294	Lithuania	2015	0.0
+295	Lithuania	2013	0.0
+296	Lithuania	2016	0.0
+297	Lithuania	2017	0.0
+298	Lithuania	2018	1.0
+299	Lithuania	2014	2.0
+300	Madagascar	2016	0.0
+301	Madagascar	2015	0.0
+302	Madagascar	2017	2.0
+303	Madagascar	2014	0.0
+304	Madagascar	2018	0.0
+305	Madagascar	2013	0.0
+306	Malaysia	2016	2.0
+307	Malaysia	2015	3.0
+308	Malaysia	2017	0.0
+309	Malaysia	2018	0.0
+310	Malaysia	2014	0.0
+311	Malaysia	2013	2.0
+312	Martinique	2015	0.0
+313	Martinique	2016	1.0
+314	Martinique	2014	0.0
+315	Martinique	2018	0.0
+316	Martinique	2017	0.0
+317	Martinique	2013	0.0
+318	Mexico	2013	6.0
+319	Mexico	2015	13.0
+320	Mexico	2016	8.0
+321	Mexico	2017	1.0
+322	Mexico	2014	12.0
+323	Mexico	2018	3.0
+324	Mongolia	2016	1.0
+325	Mongolia	2018	13.0
+326	Mongolia	2014	0.0
+327	Mongolia	2015	0.0
+328	Mongolia	2013	20.0
+329	Mongolia	2017	0.0
+330	Morocco	2016	0.0
+331	Morocco	2017	0.0
+332	Morocco	2018	0.0
+333	Morocco	2013	0.0
+334	Morocco	2014	0.0
+335	Morocco	2015	1.0
+336	Mozambique	2015	0.0
+337	Mozambique	2018	6.0
+338	Mozambique	2013	24.0
+339	Mozambique	2017	1.0
+340	Mozambique	2014	0.0
+341	Mozambique	2016	60.0
+342	Myanmar	2015	5.0
+343	Myanmar	2018	2.0
+344	Myanmar	2016	0.0
+345	Myanmar	2014	0.0
+346	Myanmar	2013	0.0
+347	Myanmar	2017	0.0
+348	Nepal	2014	1.0
+349	Nepal	2015	0.0
+350	Nepal	2016	0.0
+351	Nepal	2017	2.0
+352	Nepal	2018	0.0
+353	Nepal	2013	0.0
+354	Netherlands	2018	0.0
+355	Netherlands	2013	1.0
+356	Netherlands	2017	0.0
+357	Netherlands	2015	1.0
+358	Netherlands	2016	0.0
+359	Netherlands	2014	4.0
+360	New Zealand	2015	0.0
+361	New Zealand	2014	1.0
+362	New Zealand	2017	0.0
+363	New Zealand	2013	3.0
+364	New Zealand	2016	1.0
+365	New Zealand	2018	1.0
+366	Nicaragua	2015	0.0
+367	Nicaragua	2014	0.0
+368	Nicaragua	2017	0.0
+369	Nicaragua	2016	0.0
+370	Nicaragua	2018	0.0
+371	Nicaragua	2013	7.0
+372	Nigeria	2014	0.0
+373	Nigeria	2018	2.0
+374	Nigeria	2015	0.0
+375	Nigeria	2017	1.0
+376	Nigeria	2016	0.0
+377	Nigeria	2013	0.0
+378	Norway	2017	3.0
+379	Norway	2016	2.0
+380	Norway	2014	1.0
+381	Norway	2013	0.0
+382	Norway	2018	0.0
+383	Norway	2015	0.0
+384	Not sure Not an SAPECS person…	2017	0.0
+385	Not sure Not an SAPECS person…	2016	0.0
+386	Not sure Not an SAPECS person…	2013	0.0
+387	Not sure Not an SAPECS person…	2014	0.0
+388	Not sure Not an SAPECS person…	2015	1.0
+389	Not sure Not an SAPECS person…	2018	0.0
+390	Pakistan	2015	0.0
+391	Pakistan	2018	3.0
+392	Pakistan	2017	0.0
+393	Pakistan	2014	0.0
+394	Pakistan	2016	0.0
+395	Pakistan	2013	0.0
+396	Panama	2014	0.0
+397	Panama	2017	0.0
+398	Panama	2015	0.0
+399	Panama	2016	1.0
+400	Panama	2018	0.0
+401	Panama	2013	1.0
+402	Peru	2014	0.0
+403	Peru	2018	8.0
+404	Peru	2016	1.0
+405	Peru	2017	0.0
+406	Peru	2015	0.0
+407	Peru	2013	44.0
+408	Philippines	2017	0.0
+409	Philippines	2014	3.0
+410	Philippines	2013	1.0
+411	Philippines	2016	0.0
+412	Philippines	2018	0.0
+413	Philippines	2015	2.0
+414	Portugal	2014	9.0
+415	Portugal	2018	0.0
+416	Portugal	2016	1.0
+417	Portugal	2017	2.0
+418	Portugal	2013	1.0
+419	Portugal	2015	0.0
+420	Puerto Rico	2018	0.0
+421	Puerto Rico	2014	0.0
+422	Puerto Rico	2013	0.0
+423	Puerto Rico	2015	1.0
+424	Puerto Rico	2016	0.0
+425	Puerto Rico	2017	0.0
+426	República Dominicana	2016	0.0
+427	República Dominicana	2014	0.0
+428	República Dominicana	2013	3.0
+429	República Dominicana	2018	0.0
+430	República Dominicana	2015	0.0
+431	República Dominicana	2017	0.0
+432	Romania	2016	0.0
+433	Romania	2015	1.0
+434	Romania	2017	22.0
+435	Romania	2014	0.0
+436	Romania	2013	0.0
+437	Romania	2018	1.0
+438	Russia	2014	0.0
+439	Russia	2013	0.0
+440	Russia	2017	0.0
+441	Russia	2016	1.0
+442	Russia	2015	0.0
+443	Russia	2018	1.0
+444	Russian Federation	2017	1.0
+445	Russian Federation	2013	0.0
+446	Russian Federation	2014	0.0
+447	Russian Federation	2018	0.0
+448	Russian Federation	2016	0.0
+449	Russian Federation	2015	0.0
+450	Seychelles	2018	0.0
+451	Seychelles	2016	0.0
+452	Seychelles	2013	0.0
+453	Seychelles	2014	0.0
+454	Seychelles	2015	0.0
+455	Seychelles	2017	1.0
+456	Singapore	2014	0.0
+457	Singapore	2016	0.0
+458	Singapore	2013	1.0
+459	Singapore	2018	1.0
+460	Singapore	2017	1.0
+461	Singapore	2015	0.0
+462	Slovenia	2018	0.0
+463	Slovenia	2015	2.0
+464	Slovenia	2016	0.0
+465	Slovenia	2017	0.0
+466	Slovenia	2014	0.0
+467	Slovenia	2013	0.0
+468	South Africa	2014	0.0
+469	South Africa	2017	1.0
+470	South Africa	2015	18.0
+471	South Africa	2016	3.0
+472	South Africa	2013	0.0
+473	South Africa	2018	1.0
+474	South Korea	2018	4.0
+475	South Korea	2017	4.0
+476	South Korea	2013	0.0
+477	South Korea	2016	0.0
+478	South Korea	2015	0.0
+479	South Korea	2014	0.0
+480	Spain	2018	3.0
+481	Spain	2013	30.0
+482	Spain	2015	0.0
+483	Spain	2016	0.0
+484	Spain	2017	3.0
+485	Spain	2014	8.0
+486	Sri Lanka	2015	1.0
+487	Sri Lanka	2014	0.0
+488	Sri Lanka	2018	1.0
+489	Sri Lanka	2013	0.0
+490	Sri Lanka	2017	1.0
+491	Sri Lanka	2016	0.0
+492	Suriname	2016	1.0
+493	Suriname	2013	0.0
+494	Suriname	2018	0.0
+495	Suriname	2014	0.0
+496	Suriname	2015	0.0
+497	Suriname	2017	0.0
+498	Swaziland	2013	0.0
+499	Swaziland	2016	1.0
+500	Swaziland	2015	0.0
+501	Swaziland	2018	0.0
+502	Swaziland	2017	0.0
+503	Swaziland	2014	0.0
+504	Sweden	2015	0.0
+505	Sweden	2013	1.0
+506	Sweden	2016	1.0
+507	Sweden	2017	6.0
+508	Sweden	2018	2.0
+509	Sweden	2014	0.0
+510	Switzerland	2018	8.0
+511	Switzerland	2015	24.0
+512	Switzerland	2017	5.0
+513	Switzerland	2013	4.0
+514	Switzerland	2014	0.0
+515	Switzerland	2016	6.0
+516	Tanzania	2015	1.0
+517	Tanzania	2017	0.0
+518	Tanzania	2016	0.0
+519	Tanzania	2014	0.0
+520	Tanzania	2018	1.0
+521	Tanzania	2013	0.0
+522	Thailand	2013	0.0
+523	Thailand	2018	0.0
+524	Thailand	2015	7.0
+525	Thailand	2014	0.0
+526	Thailand	2016	1.0
+527	Thailand	2017	0.0
+528	Trinidad & Tobago	2014	18.0
+529	Trinidad & Tobago	2015	0.0
+530	Trinidad & Tobago	2013	0.0
+531	Trinidad & Tobago	2016	0.0
+532	Trinidad & Tobago	2018	0.0
+533	Trinidad & Tobago	2017	0.0
+534	Trinidad and Tobago	2017	0.0
+535	Trinidad and Tobago	2013	0.0
+536	Trinidad and Tobago	2015	0.0
+537	Trinidad and Tobago	2016	0.0
+538	Trinidad and Tobago	2014	1.0
+539	Trinidad and Tobago	2018	0.0
+540	Tunisia	2014	0.0
+541	Tunisia	2017	0.0
+542	Tunisia	2013	0.0
+543	Tunisia	2016	0.0
+544	Tunisia	2015	5.0
+545	Tunisia	2018	0.0
+546	UK	2018	0.0
+547	UK	2014	0.0
+548	UK	2016	0.0
+549	UK	2017	0.0
+550	UK	2015	1.0
+551	UK	2013	0.0
+552	USA	2017	14.0
+553	USA	2013	159.0
+554	USA	2018	0.0
+555	USA	2016	154.0
+556	USA	2014	89.0
+557	USA	2015	33.0
+558	United Arab Emirates	2018	0.0
+559	United Arab Emirates	2013	0.0
+560	United Arab Emirates	2016	0.0
+561	United Arab Emirates	2014	0.0
+562	United Arab Emirates	2015	1.0
+563	United Arab Emirates	2017	0.0
+564	United Kingdom	2013	153.0
+565	United Kingdom	2014	2.0
+566	United Kingdom	2015	0.0
+567	United Kingdom	2016	16.0
+568	United Kingdom	2017	7.0
+569	United Kingdom	2018	6.0
+570	United States	2014	0.0
+571	United States	2015	0.0
+572	United States	2018	171.0
+573	United States	2013	0.0
+574	United States	2016	17.0
+575	United States	2017	171.0
+576	Vietnam	2014	1.0
+577	Vietnam	2015	3.0
+578	Vietnam	2018	0.0
+579	Vietnam	2013	5.0
+580	Vietnam	2016	2.0
+581	Vietnam	2017	0.0
+582	Zimbabwe	2015	1.0
+583	Zimbabwe	2016	0.0
+584	Zimbabwe	2014	0.0
+585	Zimbabwe	2013	0.0
+586	Zimbabwe	2017	0.0
+587	Zimbabwe	2018	0.0
