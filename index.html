@@ -2,57 +2,94 @@
 <html>
 
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width">
+  <!--Import Google Icon Font-->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <!--Import materialize.css-->
+  <link type="text/css" rel="stylesheet" href="styles/materialize.min.css" media="screen,projection" />
+  <link rel="stylesheet" href="styles/jquery-jvectormap-2.0.3.css" type="text/css" media="screen" />
+  <link rel="stylesheet" type="text/css" href="style.css">
 
-  <!-- Display on the tab. -->
-  <title>NatCap Training Viz</title>
-
-  <!-- Link the styles. -->
-  <link rel="stylesheet" href="style.css" />
-  <link rel="stylesheet" href="w3.css" />
+  <script src="scripts/jquery-3.3.1.min.js"></script>
+  <script src="scripts/jquery-jvectormap-2.0.3.min.js"></script>
+  <script src="scripts/jquery-jvectormap-world-mill.js"></script>
+  <!--Let browser know website is optimized for mobile-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 </head>
 
 <body>
-  <!-- Title of the viz. -->
-  <!-- <h1>DataMaps Choropleth</h1> -->
+  <div>
+    <!-- Navbar goes here -->
 
-  <!-- Container for the map. -->
-  <div id="mapContainer"></div>
+    <!-- Page Layout here -->
+    <div class="row grey lighten-5" style="height: 100vh">
 
-  <!-- Container for the charts. -->
-  <div id="chartContainer"></div>
+      <!-- <div class="col s2 grey lighten-3 chart" style="height: 100vh"> -->
+      <!-- Grey navigation panel -->
+      <!-- </div> -->
 
-  <div class="more_info">
-    <button class="w3-button w3-large" onclick="w3_open()">&#9776;</button>
+      <div class="col s12" style="text-align: center">
+        <div class="row centered" style="display: inline block">
+          <div class="col s2 offset-s1">
+            <div class="card-panel z-depth-1 grey lighten-4">
+              <span class="card-title white-text">INFO</span>
+            </div>
+          </div>
+
+          <div class="col s2 ">
+            <div class="card-panel z-depth-1 grey lighten-4">
+              <div class="card-content white-text">INFO</div>
+            </div>
+          </div>
+
+          <div class="col s2 ">
+            <div class="card-panel z-depth-1 grey lighten-4">
+              <span class="card-title white-text">INFO</span>
+            </div>
+          </div>
+
+          <div class="col s2 ">
+            <div class="card-panel z-depth-1 grey lighten-4">
+              <span class="card-title white-text">INFO</span>
+            </div>
+          </div>
+
+          <div class="col s2 ">
+            <div class="card-panel z-depth-1 grey lighten-4">
+              <span class="card-title white-text">INFO</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col s6 offset-s1">
+            <div class="card z-depth-1 grey lighten-4 ">
+              <div id="world-map" class="card-image worldmap"></div>
+              <div class="card-action scrolly"></div>
+            </div>
+          </div>
+
+          <div class="col s4">
+            <div class="card z-depth-1 grey lighten-4 map"></div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col s5 offset-s1">
+            <div class="card z-depth-1 grey lighten-4 chart"></div>
+          </div>
+
+          <div class="col s5 ">
+            <div class="card z-depth-1 grey lighten-4 chart"></div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 
-  <!-- Import d3, datamaps and topojson. -->
-  <script src="//cdnjs.cloudflare.com/ajax/libs/d3/3.5.3/d3.min.js"></script>
-  <script src="//cdnjs.cloudflare.com/ajax/libs/topojson/1.6.9/topojson.min.js"></script>
-  <script src="//cdnjs.cloudflare.com/ajax/libs/datamaps/0.5.8/datamaps.all.hires.js"></script>
-
-  <!-- Add year changer. -->
-  <div class="off w3-sidebar w3-dark-grey" id="mySidebar">
-    <button class="custom w3-button w3-large" onclick="w3_close()">&times;</button>
-    <h4>Number of people trained: </h4>
-    <h4>Number of countries we have trained in: </h4>
-    <h4>Number of countries our trainees come from: </h4>
-  </div>
-
-  <ul id="years">
-    <li><a class='year' href="#" onclick="changeYear(2013);">2013</a></li>
-    <li><a class='year' href="#" onclick="changeYear(2014);">2014</a></li>
-    <li><a class='year' href="#" onclick="changeYear(2015);">2015</a></li>
-    <li><a class='year' href="#" onclick="changeYear(2016);">2016</a></li>
-    <li><a class='year' href="#" onclick="changeYear(2017);">2017</a></li>
-    <li><a class='year active' href="#" onclick="changeYear(2018);">2018</a></li>
-  </ul>
-
-  <!-- Create the viz. -->
+  <!--JavaScript at end of body for optimized loading-->
+  <script type="text/javascript" src="scripts/materialize.min.js"></script>
   <script src="map.js"></script>
-  <script src="charts.js"></script>
-  <script src="widgets.js"></script>
+
 </body>
 
 </html>

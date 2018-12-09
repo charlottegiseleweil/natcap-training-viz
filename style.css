@@ -4,121 +4,28 @@ Make the document fill the whole viewport, this overrides any weird defaults tha
 html, body {
   height: 100%;
   margin: 0;
-}
-
-body {
-  background-color: #E0E0E0;
-  display: flex;
-  flex-direction: column;
-  /* align-items: center;
-  justify-content: flex-start; */
-}
-
-#mapContainer {
-  height: 100%;
-  width: 100%;
-  /* position: relative; */
-  display: flex;
-}
-
-#chartContainer {
-  height: 75%;
-  width: 75%;
-  display: flex;
-}
-
-.custom {
-  margin-top: 15px;
-  margin-left: 10px;
-}
-
-.off {
-  display: none;
-}
-
-.more_info {
-  margin-left: 0;
-  margin-right: auto;
-  padding: 0;
-  margin-top: 15px;
-  margin-left: 10px;
   overflow: hidden;
-  background-color: #909090;
-  color: white;
-  position: fixed;
-  top: 0;
+}
+
+.map {
+  height: 50vh;
+}
+
+.worldmap {
+  height: 45vh;
+  margin-bottom: 0px;
+}
+
+.scrolly {
+  height: 5vh;
+  margin-top: 0px;
+}
+
+.chart {
+  height: 30vh;
+}
+
+.legend {
+  height: 7vh;
   width: auto;
-  height: auto;
-  text-align: center;
-  border: 1px solid black;
-}
-
-ul {
-  list-style-type: none;
-  margin-left: 0;
-  margin-right: auto;
-  padding: 0;
-  margin-top: 0;
-  margin-left: 10px;
-  overflow: hidden;
-  background-color: #909090;
-  position: fixed;
-  bottom: 0;
-  width: auto;
-  text-align: center;
-  border: 1px solid black;
-}
-
-li {
-  float: left;
-  border-right: 1px solid black;
-}
-
-li:last-child {
-  border-right: none;
-}
-
-li a {
-  display: block;
-  color: white;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-}
-
-li a:hover:not(.active) {
-  background-color: #555;
-}
-
-.year {}
-
-.active, .year:hover {
-  background-color: #607B8B;
-}
-
-li {
-  float: left;
-  border-right: 1px solid #bbb;
-}
-
-li:last-child {
-  border-right: none;
-}
-
-li a {
-  display: block;
-  color: white;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-}
-
-li a:hover:not(.active) {
-  background-color: #555;
-}
-
-.year {}
-
-.active, .year:hover {
-  background-color: #607B8B;
 }
