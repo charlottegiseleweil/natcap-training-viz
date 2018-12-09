@@ -20,7 +20,7 @@ map = new Datamap({
   },
   data: dataset,
   geographyConfig: {
-    borderWidth: 0.5,
+    borderWidth: 1,
     borderOpacity: 1,
     borderColor: 'darkgray',
     highlightBorderWidth: 2,
