@@ -30,9 +30,9 @@ $.getJSON("Data/data.json", function(data) {
           scale: ['#C8EEFF', '#0071A4'],
           normalizeFunction: 'polynomial',
           legend: {
-            horizontal: true,
+            // horizontal: true,
             title: 'Number of Trainees',
-            cssClass: 'legend'
+            // cssClass: 'legend'
           }
         }]
       },
@@ -48,7 +48,7 @@ $.getJSON("Data/data.json", function(data) {
 
       onRegionSelected: function(e, code, isSelected, selectedRegions){
         if(isSelected) {
-          // Make charts specific to this country
+          // TODO: Make charts specific to this country
           console.log(code)
         }
       },
@@ -58,7 +58,7 @@ $.getJSON("Data/data.json", function(data) {
         if(map.getSelectedRegions().includes(code)) {
           map.clearSelectedRegions()
 
-          // Revert charts back to world
+          // TODO: Revert charts back to world
           console.log('WORLD')
 
           // Prevent reselection
@@ -84,7 +84,7 @@ $.getJSON("Data/data.json", function(data) {
       val = ui.value;
       console.log(val)
       handle.text( val );
-      //TODO: Update Map and Charts
+      // TODO: Update Map and Charts
     }
   });
 
@@ -96,13 +96,18 @@ $.getJSON("Data/data.json", function(data) {
     var target = $( e.target );
     if (target.is( ":checked" )) {
       $( "#slider" ).slider( "enable" );
-      //TODO: Update Map and Charts
+      $( "#slider" ).show( "fade", {}, 500, callback );
+      // TODO: Update Map and Charts
     }
     else {
       $( "#slider" ).slider( "disable" );
-      //TODO: Update Map and Charts
+      $( "#slider:visible" ).removeAttr( "style" ).fadeOut();
+      // TODO: Update Map and Charts
     }
   }
+
+  function callback() {}
+  $( "#slider" ).hide();
 
   $( "#checkbox-1" ).on( "change", handleToggle );
 });
