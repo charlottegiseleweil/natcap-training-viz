@@ -11,13 +11,13 @@
   <script src="scripts/jquery-jvectormap-2.0.3.min.js"></script>
   <script src="scripts/jquery-jvectormap-world-mill.js"></script>
   <script src="scripts/jquery-ui.min.js"></script>
+  <script src="scripts/d3.min.js"></script>
 
   <!--Let browser know website is optimized for mobile-->
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 </head>
 
 <body>
-  <!-- <div class="slider" style="width: 280px; margin: 10px"></div> -->
   <div>
     <!-- Navbar goes here -->
 
@@ -95,7 +95,9 @@
           </div>
 
           <div class="col s10 m5 offset-s1">
-            <div class="card z-depth-1 grey lighten-4 bottom"></div>
+            <div class="card z-depth-1 grey lighten-4 bottom">
+              <svg></svg>
+            </div>
           </div>
         </div>
 
@@ -106,6 +108,7 @@
   <!--JavaScript at end of body for optimized loading-->
   <!-- <script type="text/javascript" src="scripts/materialize.min.js"></script> -->
   <script src="map.js"></script>
+  <script src="line-chart.js"></script>
 </body>
 
 </html>
