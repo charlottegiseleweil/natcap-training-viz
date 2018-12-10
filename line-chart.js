@@ -68,7 +68,7 @@ d3.csv("Data/chart-data.csv", (d, i, columns) => {
       .attr("d", d => line(d.values));
 
   svg.call(hover, path);
-  // svg.call(responsivefy);
+  svg.call(responsivefy);
 
   function hover(svg, path) {
     svg
