@@ -4,7 +4,7 @@ Make the document fill the whole viewport, this overrides any weird defaults tha
 html, body {
   height: 100%;
   margin: 0;
-  overflow: hidden;
+  /* overflow: hidden; */
 }
 
 .middle {
