@@ -4,7 +4,6 @@ Make the document fill the whole viewport, this overrides any weird defaults tha
 html, body {
   height: 100%;
   margin: 0;
-  padding: 0;
   /* overflow: hidden; */
 }
 
@@ -27,7 +26,11 @@ body {
 }
 
 .bottom {
-  height: 30vh;
+  height: 40vh;
+}
+
+.bottom2{
+  height: 30vh
 }
 
 .legend {
@@ -48,6 +51,23 @@ body {
   margin-left: 1em;
   margin-right: -.5em;
   margin-top: -1em;
+}
+
+.main-info {
+  background-image: url("https://www.naturalcapitalproject.org/wp-content/uploads/2018/03/Longji-China.jpg)");
+  background-repeat: no-repeat;
+  background-size: auto;
+}
+
+.toolTip {
+  position: absolute;
+  display: none;
+  min-width: 15px;
+  height: auto;
+  background: none repeat scroll 0 0 #ffffff;
+  border: 1px solid #6F257F;
+  padding: 2px;
+  text-align: center;
 }
 
 .hidden {
