@@ -96,9 +96,9 @@ $.when(
       }
     });
 
-    $( "input" ).checkboxradio({
-      icon: false,
-    });
+    // $( "input" ).checkboxradio({
+    //   icon: false,
+    // });
 
     function handleToggle( e ) {
       var target = $( e.target );
@@ -128,3 +128,31 @@ $.when(
 
     $( "#checkbox-1" ).on( "change", handleToggle );
 });
+
+d3.selectAll('.range-field').classed('hidden', true)
+var latestYear = 2016;
+
+function totalOrYears(checked) {
+  if(checked) {
+    d3.selectAll('.range-field').classed('hidden', false)
+    // Reset all
+    map.series.regions[0].setValues(zeros)
+    // Paint the new ones
+    map.series.regions[0].setValues(data[latestYear])
+  }
+  else {
+    d3.selectAll('.range-field').classed('hidden', true)
+    // Reset all
+    map.series.regions[0].setValues(zeros)
+    // Paint the new ones
+    map.series.regions[0].setValues(data['Total'])
+  }
+}
+
+function yearChanged(val) {
+  latestYear = val
+  // Reset all
+  map.series.regions[0].setValues(zeros)
+  // Paint the new ones
+  map.series.regions[0].setValues(data[val])
+}

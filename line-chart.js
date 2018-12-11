@@ -10,8 +10,6 @@ d3.csv("Data/chart-data.csv", (d, i, columns) => {
     dates: d.columns.slice(1).map(d3.timeParse("%Y"))
   }
 
-  console.log(data)
-
   function drawGraphic() {
     size = d3.select('#line-chart').node().parentNode.getBoundingClientRect()
 

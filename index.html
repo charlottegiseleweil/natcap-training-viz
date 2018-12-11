@@ -10,7 +10,7 @@
   <script src="scripts/jquery-3.3.1.min.js"></script>
   <script src="scripts/jquery-jvectormap-2.0.3.min.js"></script>
   <script src="scripts/jquery-jvectormap-world-mill.js"></script>
-  <script src="scripts/jquery-ui.min.js"></script>
+  <!-- <script src="scripts/jquery-ui.min.js"></script> -->
   <script src="scripts/d3.min.js"></script>
 
   <!--Let browser know website is optimized for mobile-->
@@ -69,14 +69,27 @@
               <div class="card-action scrolly">
 
                 <div class="row">
-                  <div class="col s10">
-                    <div id="slider">
-                      <div id="custom-handle" class="ui-slider-handle"></div>
+                  <div class="col s3">
+                    <div class="switch" style="margin-top: -.6em">
+                      <label>
+                        Total
+                        <input type="checkbox" oninput="totalOrYears(this.checked)">
+                        <span class="lever"></span>
+                        Years
+                      </label>
                     </div>
+                    <!-- <div id="slider">
+                      <div id="custom-handle" class="ui-slider-handle"></div>
+                    </div> -->
                   </div>
-                  <div class="col s2">
-                    <label for="checkbox-1">Years</label>
-                    <input type="checkbox" name="checkbox-1" id="checkbox-1">
+                  <div class="col s9">
+                    <form action="#">
+                      <p class="range-field" style="margin-top: -.8em;">
+                        <input type="range" id="year-slider" min="2013" max="2018" oninput="yearChanged(this.value)" />
+                      </p>
+                    </form>
+                    <!-- <label for="checkbox-1">Years</label>
+                    <input type="checkbox" name="checkbox-1" id="checkbox-1"> -->
                   </div>
                 </div>
 
@@ -106,7 +119,7 @@
   </div>
 
   <!--JavaScript at end of body for optimized loading-->
-  <!-- <script type="text/javascript" src="scripts/materialize.min.js"></script> -->
+  <script type="text/javascript" src="scripts/materialize.min.js"></script>
   <script src="map.js"></script>
   <script src="line-chart.js"></script>
 </body>
