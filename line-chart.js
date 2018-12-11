@@ -61,17 +61,31 @@ d3.csv("Data/chart-data.csv", (d, i, columns) => {
     const path = svg.append("g")
         .attr("fill", "none")
         .attr("stroke", "steelblue")
-        .attr("stroke-width", 1.5)
+        .attr("stroke-width", 2.0)
         .attr("stroke-linejoin", "round")
         .attr("stroke-linecap", "round")
       .selectAll("path")
       .data(data.series)
       .enter().append("path")
         .style("mix-blend-mode", "multiply")
-        .attr("d", d => line(d.values));
+        .attr("d", d => line(d.values))
+        .attr("stroke", typecolors)
 
     svg.call(hover, path);
     // svg.call(responsivefy);
+
+    function typecolors(d) {
+      switch(d.name) {
+        case 'Intro': return 'red'
+        case 'Webinar': return 'blue'
+        case 'Symposium': return 'green'
+        case 'Partner': return 'orange'
+        case 'Regional': return 'maroon'
+        case 'Nodal': return 'cyan'
+        case 'Seminar': return 'purple'
+        case 'Public': return 'black'
+      }
+    }
 
     function hover(svg, path) {
       svg
@@ -106,7 +120,7 @@ d3.csv("Data/chart-data.csv", (d, i, columns) => {
         const i0 = i1 - 1;
         const i = xm - data.dates[i0] > data.dates[i1] - xm ? i1 : i0;
         const s = data.series.reduce((a, b) => Math.abs(a.values[i] - ym) < Math.abs(b.values[i] - ym) ? a : b);
-        path.attr("stroke", d => d === s ? null : "#ddd").filter(d => d === s).raise();
+        path.attr("stroke", d => d === s ? typecolors(d) : "#ddd").filter(d => d === s).raise();
         dot.attr("transform", `translate(${x(data.dates[i])},${y(s.values[i])})`);
         dot.select("text").text(s.name);
       }
@@ -117,7 +131,7 @@ d3.csv("Data/chart-data.csv", (d, i, columns) => {
       }
 
       function left() {
-        path.style("mix-blend-mode", "multiply").attr("stroke", null);
+        path.style("mix-blend-mode", "multiply").attr("stroke", typecolors);
         dot.attr("display", "none");
       }
     }
