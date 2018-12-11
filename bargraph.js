@@ -19,8 +19,18 @@ const marginStackChart = {
   left: 40
 };
 
-const widthStackChart = 550 - marginStackChart.left - marginStackChart.right;
-const heightStackChart = 300 - marginStackChart.top - marginStackChart.bottom;
+size = d3
+  .select("#line-chart")
+  .node()
+  .parentNode.getBoundingClientRect();
+
+width = size.width;
+height = size.height;
+
+const widthStackChart =
+  width - marginStackChart.left - marginStackChart.right - 60;
+const heightStackChart =
+  height - marginStackChart.top - marginStackChart.bottom;
 
 const xStackChart = d3
   .scaleBand()
@@ -48,7 +58,10 @@ var canvasStackChart = d3
     "translate(" + marginStackChart.left + "," + marginStackChart.top + ")"
   );
 
-var tooltip = d3.select("body").append("div").attr("class", "toolTip");
+var tooltip = d3
+  .select("body")
+  .append("div")
+  .attr("class", "toolTip");
 
 drawStackChart(transformedData);
 
@@ -124,17 +137,21 @@ function drawStackChart(data) {
     .attr("height", function(d) {
       return yStackChart(d.y0) - yStackChart(d.y1);
     })
-    .on('mouseover', function(d) {
+    .on("mouseover", function(d) {
       tooltip
         .style("left", d3.event.pageX - 40 + "px")
         .style("top", d3.event.pageY - 40 + "px")
         .style("display", "inline-block")
         .html((d.y1 - d.y0).toFixed(0));
-      d3.select(this).attr("r", 10).style("fill", "#26a69a");
+      d3.select(this)
+        .attr("r", 10)
+        .style("fill", "#26a69a");
     })
-    .on('mouseout', function(d) {
+    .on("mouseout", function(d) {
       tooltip.style("display", "none");
-      d3.select(this).attr("r", 5.5).style("fill", colorStackChart(d.name));
+      d3.select(this)
+        .attr("r", 5.5)
+        .style("fill", colorStackChart(d.name));
     })
     .style("fill", function(d) {
       return colorStackChart(d.name);
@@ -144,9 +161,9 @@ function drawStackChart(data) {
     .selectAll(".legend")
     .data(
       colorStackChart
-      .domain()
-      .slice()
-      .reverse()
+        .domain()
+        .slice()
+        .reverse()
     )
     .enter()
     .append("g")
