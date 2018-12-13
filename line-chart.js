@@ -80,21 +80,21 @@ d3.csv("Data/chart-data.csv", (d, i, columns) => {
     function typecolors(d) {
       switch (d.name) {
         case 'Intro':
-          return 'red'
+          return '#66c2a5'
         case 'Webinar':
-          return 'blue'
+          return '#fc8d62'
         case 'Symposium':
-          return 'green'
+          return '#8da0cb'
         case 'Partner':
-          return 'orange'
+          return '#e78ac3'
         case 'Regional':
-          return 'maroon'
+          return '#a6d854'
         case 'Nodal':
-          return 'cyan'
+          return '#ffd92f'
         case 'Seminar':
-          return 'purple'
+          return '#e5c494'
         case 'Public':
-          return 'black'
+          return '#b3b3b3'
       }
     }
 
