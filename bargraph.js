@@ -1,24 +1,48 @@
-function createGraph(path, container_id, graph_id) {
+function createGraph(path, container_id, graph_id, type) {
   d3.csv(path, (d, i, columns) => {
     return {
       values: columns.slice(1).map(k => +d[k]),
       name: d[""]
     };
   }).then(d => {
-    let data = {
-      Year: d.columns.slice(1),
-      Intro: d[0].values,
-      Intermediate: d[1].values,
-      Advanced: d[2].values
-    };
+    let data = {};
 
-    function drawGraph(class_data) {
-      var transformedData = class_data.Year.map((Year, index) => ({
-        Year,
-        Intro: class_data.Intro[index],
-        Intermediate: class_data.Intermediate[index],
-        Advanced: class_data.Advanced[index]
-      }));
+    if (type) {
+      data = {
+        Year: d.columns.slice(1),
+        Intro: d[0].values,
+        Intermediate: d[1].values,
+        Advanced: d[2].values
+      };
+    } else {
+      data = {
+        Year: d.columns.slice(1),
+        Other: d[0].values,
+        Symposiums: d[1].values
+      };
+    }
+
+    function drawGraph(class_data, type) {
+      var transformedData = {};
+
+      if (type) {
+        transformedData = class_data.Year.map((Year, index) => ({
+          Year,
+          Intro: class_data.Intro[index],
+          Intermediate: class_data.Intermediate[index],
+          Advanced: class_data.Advanced[index]
+        }));
+      } else {
+        transformedData = class_data.Year.map((Year, index) => ({
+          Year,
+          Other: class_data.Other[index],
+          Symposiums: class_data.Symposiums[index]
+        }));
+      }
+
+      if (!type) {
+        console.log(transformedData);
+      }
 
       const marginStackChart = {
         top: 20,
@@ -208,17 +232,25 @@ function createGraph(path, container_id, graph_id) {
     function resize() {
       var s = d3.select("#" + graph_id);
       s = s.remove();
-      drawGraph(data);
+      drawGraph(data, type);
     }
 
-    drawGraph(data);
-    console.log(path);
-    console.log(container_id);
-    console.log(graph_id);
+    drawGraph(data, type);
 
     window.addEventListener("resize", resize);
   });
 }
 
-createGraph("Data/class-levels-all-time.csv", "#barGraph", "barGraph-svg");
-createGraph("Data/class-levels-all-time.csv", "#barGraph2", "barGraph-svg2");
+createGraph(
+  "Data/class-levels-all-time.csv",
+  "#barGraph",
+  "barGraph-svg",
+  true
+);
+createGraph(
+  "Data/class-levels-all-time.csv",
+  "#barGraph2",
+  "barGraph-svg2",
+  true
+);
+createGraph("Data/symposium-vs-rest.csv", "#tab1", "barGraph-svg3", false);
