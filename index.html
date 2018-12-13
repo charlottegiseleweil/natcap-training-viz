@@ -4,7 +4,7 @@
 <head>
   <link type="text/css" rel="stylesheet" media="all" href="styles/materialize.min.css" />
   <link type="text/css" rel="stylesheet" media="all" href="styles/jquery-jvectormap-2.0.3.css" />
-  <link type="text/css" rel="stylesheet" media="all" href="styles/jquery-ui.min.css" />
+  <!-- <link type="text/css" rel="stylesheet" media="all" href="styles/jquery-ui.min.css" /> -->
   <link type="text/css" rel="stylesheet" media="all" href="style.css" />
 
   <script src="scripts/jquery-3.3.1.min.js"></script>
@@ -12,111 +12,151 @@
   <script src="scripts/jquery-jvectormap-world-mill.js"></script>
   <!-- <script src="scripts/jquery-ui.min.js"></script> -->
   <script src="scripts/d3.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-tip/0.7.1/d3-tip.min.js"></script>
+
+  <script>
+    $(document).ready(function(){
+      $('.parallax').parallax();
+    });
+    $(document).ready(function(){
+      $('.tabs').tabs();
+    });
+  </script>
 
   <!--Let browser know website is optimized for mobile-->
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 </head>
 
-<body>
-  <div>
-    <!-- Navbar goes here -->
+<body class='main-info'>
 
-    <!-- Page Layout here -->
-    <div class="row grey lighten-5" style="height: 100vh">
+  <h1 class="grey-text text-darken-1" style="text-align: center; font-weight: bold;">Natural Capital Project </h1>
 
-      <!-- <div class="col s2 grey lighten-3 bottom" style="height: 100vh"> -->
-      <!-- Grey navigation panel -->
-      <!-- </div> -->
+  <div class="row" style="text-align: center">
 
-      <div class="col s12" style="text-align: center">
+    <div class="col s10 m2 offset-s1 offset-m1">
+      <div class="card-panel z-depth-1 grey lighten-4" style="opacity: .85;">
+        <span class="card-title grey-text text-darken-2">Number Of Countries We Have Trained In</span>
+        <div class="card-content red-text flow-text">33</div>
+      </div>
+    </div>
 
-        <div class="row">
-          <div class="col s10 m2 offset-s1 offset-m1">
-            <div class="card-panel z-depth-1 grey lighten-4">
-              <span class="card-title white-text">INFO</span>
-            </div>
-          </div>
+    <div class="col s10 m2 offset-s1">
+      <div class="card-panel z-depth-1 grey lighten-4" style="opacity: .85;">
+        <div class="card-content grey-text text-darken-2">Number Of People We Have Trained</div>
+        <div class="card-content red-text flow-text">3685</div>
+      </div>
+    </div>
 
-          <div class="col s10 m2 offset-s1">
-            <div class="card-panel z-depth-1 grey lighten-4">
-              <div class="card-content white-text">INFO</div>
-            </div>
-          </div>
+    <div class="col s10 m2 offset-s1">
+      <div class="card-panel z-depth-1 grey lighten-4" style="opacity: .85;">
+        <div class="card-content grey-text text-darken-2">Number Of Countries Our Trainees Come From</div>
+        <div class="card-content red-text flow-text">98</div>
+      </div>
+    </div>
 
-          <div class="col s10 m2 offset-s1">
-            <div class="card-panel z-depth-1 grey lighten-4">
-              <span class="card-title white-text">INFO</span>
-            </div>
-          </div>
+    <div class="col s10 m2 offset-s1">
+      <div class="card-panel z-depth-1 grey lighten-4" style="opacity: .85;">
+        <div class="card-content grey-text text-darken-2">Total Number of Trainers Worldwide</div>
+        <div class="card-content red-text flow-text">506</div>
+      </div>
+    </div>
 
-          <div class="col s10 m2 offset-s1">
-            <div class="card-panel z-depth-1 grey lighten-4">
-              <span class="card-title white-text">INFO</span>
-            </div>
-          </div>
-
-          <div class="col s10 m2 offset-s1">
-            <div class="card-panel z-depth-1 grey lighten-4">
-              <span class="card-title white-text">INFO</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="row">
-          <div class="col s10 m6 offset-s1 offset-m1">
-            <div class="card z-depth-1 grey lighten-4 ">
-              <div id="world-map" class="card-image worldmap"></div>
-              <div class="card-action scrolly">
-
-                <div class="row">
-                  <div class="col s3">
-                    <div class="switch" style="margin-top: -.6em">
-                      <label>
-                        Total
-                        <input type="checkbox" oninput="totalOrYears(this.checked)">
-                        <span class="lever"></span>
-                        Years
-                      </label>
-                    </div>
-                  </div>
-                  <div class="col s9">
-                    <form action="#">
-                      <p class="range-field" style="margin-top: -.8em;">
-                        <input type="range" id="year-slider" min="2013" max="2018" oninput="yearChanged(this.value)" />
-                      </p>
-                    </form>
-                  </div>
-                </div>
-
-              </div>
-            </div>
-          </div>
-
-          <div class="col s10 m4 offset-s1">
-            <div class="card z-depth-1 grey lighten-4 middle"></div>
-          </div>
-        </div>
-
-        <div class="row">
-          <div class="col s10 m5 offset-m1 offset-s1">
-            <div class="card z-depth-1 grey lighten-4 bottom"></div>
-          </div>
-
-          <div class="col s10 m5 offset-s1">
-            <div class="card z-depth-1 grey lighten-4 bottom">
-              <svg id='line-chart'></svg>
-            </div>
-          </div>
-        </div>
-
+    <div class="col s10 m2 offset-s1">
+      <div class="card-panel z-depth-1 grey lighten-4" style="opacity: .85;">
+        <div class="card-content grey-text text-darken-2">People Something Something Something</div>
+        <div class="card-content red-text flow-text">1234</div>
       </div>
     </div>
   </div>
 
-  <!--JavaScript at end of body for optimized loading-->
-  <script type="text/javascript" src="scripts/materialize.min.js"></script>
+
+  <div class="row">
+    <div class="col s10 m6 offset-s1 offset-m1">
+      <div class="card z-depth-1 grey lighten-4" style="opacity: .85;">
+        <div id="world-map" class="card-image worldmap"></div>
+        <div class="card-action scrolly">
+
+          <div class="row">
+            <div class="col s3">
+              <div class="switch" style="margin-top: -.6em">
+                <label>
+                  Total
+                  <input type="checkbox" oninput="totalOrYears(this.checked)">
+                  <span class="lever"></span>
+                  Years
+                </label>
+              </div>
+            </div>
+            <div class="col s9">
+              <form action="#">
+                <p class="range-field" style="margin-top: -.8em;">
+                  <input type="range" id="year-slider" min="2013" max="2018" oninput="yearChanged(this.value)" />
+                </p>
+              </form>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="col s10 m4 offset-s1">
+      <div class="card z-depth-1 grey lighten-4 middle" style="opacity: .85;">
+        <div class="card-tabs">
+          <ul class="tabs tabs-fixed-width">
+            <li class="tab blue-tab"><a class="active" href="#tab1">Tab 1</a></li>
+            <li class="tab"><a href="#tab2">Tab 2</a></li>
+          </ul>
+        </div>
+        <div class="card-content grey lighten-4">
+          <div id="tab1">Tab 1</div>
+          <div id="tab2">Tab 2</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col s10 m5 offset-m1 offset-s1">
+      <div class="card z-depth-1 grey lighten-4 bottom" style="opacity: .85;">
+        <div class="card-tabs">
+          <ul class="tabs tabs-fixed-width">
+            <li class="tab"><a class="active" href="#barGraph">Bar Graph</a></li>
+            <li class="tab"><a href="#lineGraph">Line Graph</a></li>
+          </ul>
+        </div>
+        <div class="card-content grey lighten-2">
+          <div id="barGraph" class="bottom2"></div>
+          <div id="lineGraph">Line Graph</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col s10 m5 offset-s1">
+      <div class="card z-depth-1 grey lighten-2 bottom" style="opacity: .85;">
+        <div class="card-tabs">
+          <ul class="tabs tabs-fixed-width">
+            <li class="tab"><a class="active" href="#barGraph2">Bar Graph</a></li>
+            <li class="tab"><a href="#lineChart">Line Graph</a></li>
+          </ul>
+        </div>
+        <div class="card-content grey lighten-4">
+          <div id="barGraph2">Bar Graph</div>
+          <div id="lineChart" class="bottom2"><svg id='line-chart'></svg></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <script src="bargraph.js">
+  </script>
+  <script src="line-chart.js">
+  </script>
   <script src="map.js"></script>
-  <script src="line-chart.js"></script>
+  <script type="text/javascript" src="scripts/materialize.min.js"></script>
+
 </body>
+
 
 </html>

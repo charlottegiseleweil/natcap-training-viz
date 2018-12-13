@@ -16,7 +16,12 @@ d3.csv("Data/chart-data.csv", (d, i, columns) => {
     width = size.width
     height = size.height
 
-    margin = ({top: 20, right: 20, bottom: 30, left: 40})
+    margin = ({
+      top: 20,
+      right: 20,
+      bottom: 30,
+      left: 40
+    })
 
     x = d3.scaleTime()
       .domain(d3.extent(data.dates))
@@ -40,75 +45,83 @@ d3.csv("Data/chart-data.csv", (d, i, columns) => {
       .call(d3.axisLeft(y))
       .call(g => g.select(".domain").remove())
       .call(g => g.select(".tick:last-of-type text").clone()
-          .attr("x", 3)
-          .attr("text-anchor", "start")
-          .attr("font-weight", "bold")
-          .text(data.y))
+        .attr("x", 3)
+        .attr("text-anchor", "start")
+        .attr("font-weight", "bold")
+        .text(data.y))
 
     // const svg = d3.select(DOM.svg(width, height));
     const svg = d3.select('#line-chart')
-                  .attr('height', height)
-                  .attr('width', width)
+      .attr('height', height)
+      .attr('width', width)
 
     svg.append("g")
-        .call(xAxis);
+      .call(xAxis);
 
     svg.append("g")
-        .call(yAxis);
+      .call(yAxis);
 
     const path = svg.append("g")
-        .attr("fill", "none")
-        .attr("stroke", "steelblue")
-        .attr("stroke-width", 2.0)
-        .attr("stroke-linejoin", "round")
-        .attr("stroke-linecap", "round")
+      .attr("fill", "none")
+      .attr("stroke", "steelblue")
+      .attr("stroke-width", 2.0)
+      .attr("stroke-linejoin", "round")
+      .attr("stroke-linecap", "round")
       .selectAll("path")
       .data(data.series)
       .enter().append("path")
-        .style("mix-blend-mode", "multiply")
-        .attr("d", d => line(d.values))
-        .attr("stroke", typecolors)
+      .style("mix-blend-mode", "multiply")
+      .attr("d", d => line(d.values))
+      .attr("stroke", typecolors)
 
     svg.call(hover, path);
     // svg.call(responsivefy);
 
     function typecolors(d) {
-      switch(d.name) {
-        case 'Intro': return 'red'
-        case 'Webinar': return 'blue'
-        case 'Symposium': return 'green'
-        case 'Partner': return 'orange'
-        case 'Regional': return 'maroon'
-        case 'Nodal': return 'cyan'
-        case 'Seminar': return 'purple'
-        case 'Public': return 'black'
+      switch (d.name) {
+        case 'Intro':
+          return 'red'
+        case 'Webinar':
+          return 'blue'
+        case 'Symposium':
+          return 'green'
+        case 'Partner':
+          return 'orange'
+        case 'Regional':
+          return 'maroon'
+        case 'Nodal':
+          return 'cyan'
+        case 'Seminar':
+          return 'purple'
+        case 'Public':
+          return 'black'
       }
     }
 
     function hover(svg, path) {
       svg
-          .style("position", "relative");
+        .style("position", "relative");
 
       if ("ontouchstart" in document) svg
-          .style("-webkit-tap-highlight-color", "transparent")
-          .on("touchmove", moved)
-          .on("touchstart", entered)
-          .on("touchend", left)
+        .style("-webkit-tap-highlight-color", "transparent")
+        .on("touchmove", moved)
+        .on("touchstart", entered)
+        .on("touchend", left)
       else svg
-          .on("mousemove", moved)
-          .on("mouseenter", entered)
-          .on("mouseleave", left);
+        .on("mousemove", moved)
+        .on("mouseenter", entered)
+        .on("mouseleave", left);
 
       const dot = svg.append("g")
-          .attr("display", "none");
+        .attr("display", "none");
 
       dot.append("circle")
-          .attr("r", 2.5);
+        .attr("r", 2.5);
 
       dot.append("text")
-          .style("font", "10px sans-serif")
-          .attr("text-anchor", "middle")
-          .attr("y", -8);
+        .style("font", "10px sans-serif")
+        .attr("text-anchor", "middle")
+        .attr("y", -8);
 
       function moved() {
         d3.event.preventDefault();
@@ -139,9 +152,8 @@ d3.csv("Data/chart-data.csv", (d, i, columns) => {
 
   var resizeTimer;
   window.onresize = function(event) {
-   clearTimeout(resizeTimer);
-    resizeTimer = setTimeout(function()
-    {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(function() {
       var s = d3.select('#line-chart');
       var parent = s.node().parentNode
       s = s.remove();
