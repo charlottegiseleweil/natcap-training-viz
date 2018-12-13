@@ -77,7 +77,7 @@
         <div class="card-action scrolly">
 
           <div class="row">
-            <div class="col s3">
+            <div class="col s4">
               <div class="switch" style="margin-top: -.6em">
                 <label>
                   Total
@@ -87,7 +87,7 @@
                 </label>
               </div>
             </div>
-            <div class="col s9">
+            <div class="col s8">
               <form action="#">
                 <p class="range-field" style="margin-top: -.8em;">
                   <input type="range" id="year-slider" min="2013" max="2018" oninput="yearChanged(this.value)" />
@@ -121,7 +121,7 @@
       <div class="card z-depth-1 grey lighten-4 bottom" style="opacity: .85;">
         <div class="card-tabs">
           <ul class="tabs tabs-fixed-width">
-            <li class="tab"><a class="active" href="#barGraph">Bar Graph</a></li>
+            <li class="tab"><a class="active" href="#barGraph" onshow='console.log("hello")'>Bar Graph</a></li>
             <li class="tab"><a href="#lineGraph">Line Graph</a></li>
           </ul>
         </div>

@@ -101,3 +101,9 @@ function yearChanged(val) {
   // Paint the new ones
   map.series.regions[0].setValues(data[val])
 }
+
+$(document).ready(function(){
+    $('ul.tabs').tabs({
+      // swipeable : true,
+    });
+  });
