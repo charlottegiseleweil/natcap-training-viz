@@ -74,59 +74,6 @@ $.when(
         },
       });
     });
-
-    var val = 2018
-    var handle = $( "#custom-handle" );
-
-    $("#slider").slider({
-      value: val,
-      min: 2013,
-      max: 2018,
-      step: 1,
-      create: function() {
-        handle.text( $( this ).slider( "value" ) );
-      },
-      slide: function(event, ui) {
-        val = ui.value;
-        handle.text( val );
-        // Reset all
-        map.series.regions[0].setValues(zeros)
-        // Paint the new ones
-        map.series.regions[0].setValues(data[val])
-      }
-    });
-
-    // $( "input" ).checkboxradio({
-    //   icon: false,
-    // });
-
-    function handleToggle( e ) {
-      var target = $( e.target );
-      if (target.is( ":checked" )) {
-        $( "#slider" ).toggle( "slide", {}, 500 );
-        // $( "#slider" ).slider( "enable" );
-        // $( "#checkbox-1" ).checkboxradio( "option", "label", "Total" );
-        // TODO: Update Map and Charts
-        // Reset all
-        map.series.regions[0].setValues(zeros)
-        // Paint the new ones
-        map.series.regions[0].setValues(data[val])
-      }
-      else {
-        // $( "#slider" ).slider( "disable" );
-        $( "#slider" ).toggle( "slide", {}, 500 );
-        // $( "#checkbox-1" ).checkboxradio( "option", "label", "Years" );
-        // TODO: Update Map and Charts
-        // Reset all
-        map.series.regions[0].setValues(zeros)
-        // Paint the new ones
-        map.series.regions[0].setValues(data['Total'])
-      }
-    }
-
-    $( "#slider" ).hide();
-
-    $( "#checkbox-1" ).on( "change", handleToggle );
 });
 
 d3.selectAll('.range-field').classed('hidden', true)
