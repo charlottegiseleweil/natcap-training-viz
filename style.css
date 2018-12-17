@@ -12,11 +12,11 @@ body {
 }
 
 .middle {
-  height: 50vh;
+  height: 40vh;
 }
 
 .worldmap {
-  height: 45vh;
+  height: 50vh;
   margin-bottom: 0px;
 }
 
@@ -26,7 +26,7 @@ body {
 }
 
 .bottom {
-  height: 40vh;
+  height: 50vh;
 }
 
 .bottom2{
@@ -53,12 +53,6 @@ body {
   margin-top: -1em;
 }
 
-.main-info {
-  background-image: url("https://www.naturalcapitalproject.org/wp-content/uploads/2018/03/Longji-China.jpg)");
-  background-repeat: no-repeat;
-  background-size: auto;
-}
-
 .toolTip {
   position: absolute;
   display: none;
@@ -72,4 +66,20 @@ body {
 
 .hidden {
   display: none;
+}
+
+.container-1 {
+  height:100vh;
+}
+
+.container-2 {
+  height:55vh;
+}
+
+.image-1{
+  opacity:.5;
+}
+
+.last_row{
+  background-image: url("images/image11.jpg");
 }
