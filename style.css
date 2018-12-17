@@ -16,7 +16,7 @@ body {
 }
 
 .worldmap {
-  height: 50vh;
+  height: 53.25vh;
   margin-bottom: 0px;
 }
 
@@ -30,7 +30,7 @@ body {
 }
 
 .bottom2{
-  height: 30vh
+  height: 25vh
 }
 
 .legend {
@@ -85,5 +85,5 @@ body {
 }
 
 .graphs{
-  height: 20vh;
+  height: 30vh;
 }

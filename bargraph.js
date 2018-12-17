@@ -93,10 +93,10 @@ function createGraph(path, container_id, graph_id, type) {
         .attr(
           "transform",
           "translate(" +
-            marginStackChart.left +
-            "," +
-            marginStackChart.top +
-            ")"
+          marginStackChart.left +
+          "," +
+          marginStackChart.top +
+          ")"
         );
 
       var tooltip = d3
@@ -199,9 +199,9 @@ function createGraph(path, container_id, graph_id, type) {
         .selectAll(".legend")
         .data(
           colorStackChart
-            .domain()
-            .slice()
-            .reverse()
+          .domain()
+          .slice()
+          .reverse()
         )
         .enter()
         .append("g")
@@ -243,14 +243,14 @@ function createGraph(path, container_id, graph_id, type) {
 
 createGraph(
   "Data/class-levels-all-time.csv",
-  "#barGraph",
+  "#barGraph-1",
   "barGraph-svg",
   true
 );
 createGraph(
   "Data/class-levels-all-time.csv",
-  "#barGraph2",
+  "#barGraph-2",
   "barGraph-svg2",
   true
 );
-createGraph("Data/symposium-vs-rest.csv", "#tab1", "barGraph-svg3", false);
+createGraph("Data/symposium-vs-rest.csv", "#barGraph-3", "barGraph-svg3", false);
