@@ -81,7 +81,7 @@ function createAreaGraph(data_path, container_id) {
 
       // add the Y Axis
       svg.append("g")
-          .call(d3.axisLeft(y));
+          .call(d3.axisLeft(y).ticks(5, 's'));
 
 
       // text label for the x axis

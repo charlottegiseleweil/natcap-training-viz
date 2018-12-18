@@ -98,3 +98,18 @@ body {
 .area {
   fill: rgb(138, 194, 117);
 }
+
+.yearslider {
+  opacity: 0.7;
+}
+
+.yearslider:hover {
+  opacity: 1;
+}
+
+#current-year {
+  color: white;
+  font-size: 10pt;
+  margin-top: -.3em;
+  font-family: "BT Mono Bold"
+}

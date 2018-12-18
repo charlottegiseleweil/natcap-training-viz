@@ -103,17 +103,20 @@ $.when($.getJSON("Data/data.json"), $.getJSON("Data/zeros.json")).done(function(
 });
 
 d3.selectAll(".range-field").classed("hidden", true);
+d3.selectAll("#current-year").classed("hidden", true);
 var latestYear = 2016;
 
 function totalOrYears(checked) {
   if (checked) {
     d3.selectAll(".range-field").classed("hidden", false);
+    d3.selectAll("#current-year").classed("hidden", false);
     // Reset all
     map.series.regions[0].setValues(zeros);
     // Paint the new ones
     map.series.regions[0].setValues(data[latestYear]);
   } else {
     d3.selectAll(".range-field").classed("hidden", true);
+    d3.selectAll("#current-year").classed("hidden", true);
     // Reset all
     map.series.regions[0].setValues(zeros);
     // Paint the new ones
@@ -127,6 +130,8 @@ function yearChanged(val) {
   map.series.regions[0].setValues(zeros);
   // Paint the new ones
   map.series.regions[0].setValues(data[val]);
+  // Change text
+  d3.select('#current-year').text(val)
 }
 
 $(document).ready(function() {
