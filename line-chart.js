@@ -82,11 +82,11 @@ function createGraph(path, id, code='WORLD', year='TOTAL') {
         switch (d.name) {
           case 'Intro':
             return '#66c2a5'
-          case 'Webinar':
+          case 'Intermediate':
             return '#fc8d62'
           case 'Symposium':
             return '#8da0cb'
-          case 'Partner':
+          case 'Advanced':
             return '#e78ac3'
           case 'Regional':
             return '#a6d854'
@@ -163,5 +163,5 @@ function createGraph(path, id, code='WORLD', year='TOTAL') {
   })
 }
 
-createGraph("Data/chart-data.csv", "#line-chart");
-createGraph("Data/chart-data.csv", "#line-chart-2");
+createGraph("Data/chart-data-copy.csv", "#line-chart");
+// createGraph("Data/chart-data.csv", "#line-chart-2");
