@@ -86,7 +86,7 @@ $.when($.getJSON("Data/data.json"), $.getJSON("Data/zeros.json")).done(function(
           var s = d3.select("#barGraph-svg");
           s = s.remove();
           createGraph_bar(
-            "Data/Type_Stats.csv",
+            "Data/chart-data.csv",
             "#barGraph-type",
             "barGraph-svg",
             true,
