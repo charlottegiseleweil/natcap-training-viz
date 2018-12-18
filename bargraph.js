@@ -103,8 +103,16 @@ function createGraph_bar(
       width = size.width;
       height = size.height;
 
-      const widthStackChart =
-        width - marginStackChart.left - marginStackChart.right - 20;
+      var widthStackChart = 0;
+
+      if (country === "WORLD" && year === "Total") {
+        widthStackChart =
+          width - marginStackChart.left - marginStackChart.right - 60;
+      } else {
+        widthStackChart =
+          width - marginStackChart.left - marginStackChart.right - 20;
+      }
+
       const heightStackChart =
         height - marginStackChart.top - marginStackChart.bottom;
 
@@ -270,16 +278,23 @@ function createGraph_bar(
           return "translate(0," + i * 20 + ")";
         });
 
+      var variable = 30;
+      if (country === "WORLD" && year === "Total") {
+        variable = 60;
+      } // else {
+      //   variable
+      // }
+
       legend
         .append("rect")
-        .attr("x", widthStackChart + 35)
+        .attr("x", widthStackChart + variable + 5)
         .attr("width", 18)
         .attr("height", 18)
         .style("fill", colorStackChart);
 
       legend
         .append("text")
-        .attr("x", widthStackChart + 30)
+        .attr("x", widthStackChart + variable)
         .attr("y", 9)
         .attr("dy", ".35em")
         .style("text-anchor", "end")
