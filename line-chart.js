@@ -21,7 +21,7 @@ function createGraph(path, id, code='WORLD', year='TOTAL') {
         top: 10,
         right: 20,
         bottom: 20,
-        left: 20
+        left: 30
       })
 
       x = d3.scaleTime()

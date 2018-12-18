@@ -62,7 +62,7 @@ function createAreaGraph(data_path, container_id) {
          .attr("class", "area")
          .attr("d", zeroArea)
          .transition()
-           .duration(1000)
+           .duration(2000)
            .attr("d", area)
 
       // add the valueline path.
@@ -71,7 +71,7 @@ function createAreaGraph(data_path, container_id) {
           .attr("class", "line")
           .attr("d", zeroLine)
           .transition()
-            .duration(1000)
+            .duration(2000)
             .attr("d", valueline)
 
       // add the X Axis
