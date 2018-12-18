@@ -88,3 +88,13 @@ body {
 .graphs {
   height: 30vh;
 }
+
+.line {
+  fill: none;
+  stroke: rgb(43, 103, 62);
+  stroke-width: 2px;
+}
+
+.area {
+  fill: rgb(138, 194, 117);
+}
