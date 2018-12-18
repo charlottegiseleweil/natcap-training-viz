@@ -1,3 +1,6 @@
+var currentCountry = "WORLD";
+var currentYear = "Total";
+
 $.when($.getJSON("Data/data.json"), $.getJSON("Data/zeros.json")).done(function(
   data1,
   data2
@@ -62,7 +65,9 @@ $.when($.getJSON("Data/data.json"), $.getJSON("Data/zeros.json")).done(function(
       onRegionSelected: function(e, code, isSelected, selectedRegions) {
         if (isSelected) {
           // Make charts specific to this country
-          console.log(code);
+          // console.log(code);
+          currentCountry = code;
+
           var s = d3.select("#barGraph-svg");
           s = s.remove();
           createGraph_bar(
@@ -70,8 +75,8 @@ $.when($.getJSON("Data/data.json"), $.getJSON("Data/zeros.json")).done(function(
             "#barGraph-type",
             "barGraph-svg",
             true,
-            code,
-            "Total"
+            currentCountry,
+            "" + currentYear
           );
         }
       },
@@ -82,16 +87,18 @@ $.when($.getJSON("Data/data.json"), $.getJSON("Data/zeros.json")).done(function(
           map.clearSelectedRegions();
 
           // Revert charts back to world
-          console.log("WORLD");
+          // console.log("WORLD");
+          currentCountry = "WORLD";
+
           var s = d3.select("#barGraph-svg");
           s = s.remove();
           createGraph_bar(
-            "Data/chart-data.csv",
+            "Data/Type_Stats.csv",
             "#barGraph-type",
             "barGraph-svg",
             true,
-            "WORLD",
-            "Total"
+            currentCountry,
+            "" + currentYear
           );
 
           // Prevent reselection
@@ -104,10 +111,11 @@ $.when($.getJSON("Data/data.json"), $.getJSON("Data/zeros.json")).done(function(
 
 d3.selectAll(".range-field").classed("hidden", true);
 d3.selectAll("#current-year").classed("hidden", true);
-var latestYear = 2016;
+var latestYear = 2018;
 
 function totalOrYears(checked) {
   if (checked) {
+    currentYear = latestYear;
     d3.selectAll(".range-field").classed("hidden", false);
     d3.selectAll("#current-year").classed("hidden", false);
     // Reset all
@@ -115,6 +123,7 @@ function totalOrYears(checked) {
     // Paint the new ones
     map.series.regions[0].setValues(data[latestYear]);
   } else {
+    currentYear = "Total";
     d3.selectAll(".range-field").classed("hidden", true);
     d3.selectAll("#current-year").classed("hidden", true);
     // Reset all
@@ -122,16 +131,39 @@ function totalOrYears(checked) {
     // Paint the new ones
     map.series.regions[0].setValues(data["Total"]);
   }
+
+  var s = d3.select("#barGraph-svg");
+  s = s.remove();
+  createGraph_bar(
+    "Data/Type_Stats.csv",
+    "#barGraph-type",
+    "barGraph-svg",
+    true,
+    currentCountry,
+    "" + currentYear
+  );
 }
 
 function yearChanged(val) {
   latestYear = val;
+  currentYear = val;
   // Reset all
   map.series.regions[0].setValues(zeros);
   // Paint the new ones
   map.series.regions[0].setValues(data[val]);
   // Change text
   d3.select('#current-year').text(val)
+
+  var s = d3.select("#barGraph-svg");
+  s = s.remove();
+  createGraph_bar(
+    "Data/Type_Stats.csv",
+    "#barGraph-type",
+    "barGraph-svg",
+    true,
+    currentCountry,
+    "" + currentYear
+  );
 }
 
 $(document).ready(function() {
