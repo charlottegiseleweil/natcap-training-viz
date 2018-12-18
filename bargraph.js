@@ -21,17 +21,25 @@ function createGraph_bar(
     let data = {};
 
     if (country === "WORLD" && year === "Total") {
-      data = {
-        Year: d.columns.slice(1),
-        Intro: d[0].values,
-        Nodal: d[1].values,
-        Partner: d[2].values,
-        Public: d[3].values,
-        Regional: d[4].values,
-        Seminar: d[5].values,
-        Symposium: d[6].values,
-        Webinar: d[7].values
-      };
+      if (type) {
+        data = {
+          Year: d.columns.slice(1),
+          Intro: d[0].values,
+          Nodal: d[1].values,
+          Partner: d[2].values,
+          Public: d[3].values,
+          Regional: d[4].values,
+          Seminar: d[5].values,
+          Symposium: d[6].values,
+          Webinar: d[7].values
+        };
+      } else {
+        data = {
+          Year: d.columns.slice(1),
+          Symposium: d[1].values,
+          Other: d[0].values
+        };
+      }
     } else {
       var filtered_data = d.filter(function(x) {
         return x.d.Country === country && x.d.Year === year;
@@ -44,40 +52,27 @@ function createGraph_bar(
         values.push(parseInt(filtered_data[i].d.Count));
       }
 
-      if (type) {
-        data = {
-          Year: years,
-          Trainees: values
-        };
-      } else {
-        data = {
-          Year: d.columns.slice(1),
-          Symposium: d[1].values,
-          Other: d[0].values
-        };
-      }
+      data = {
+        Year: years,
+        Trainees: values
+      };
     }
 
     function drawGraph(class_data, type, country, year) {
       var transformedData = {};
 
       if (country === "WORLD" && year === "Total") {
-        transformedData = class_data.Year.map((Year, index) => ({
-          Year,
-          Intro: class_data.Intro[index],
-          Nodal: class_data.Nodal[index],
-          Partner: class_data.Partner[index],
-          Public: class_data.Public[index],
-          Regional: class_data.Regional[index],
-          Seminar: class_data.Seminar[index],
-          Symposium: class_data.Symposium[index],
-          Webinar: class_data.Webinar[index]
-        }));
-      } else {
         if (type) {
           transformedData = class_data.Year.map((Year, index) => ({
             Year,
-            Trainees: class_data.Trainees[index]
+            Intro: class_data.Intro[index],
+            Nodal: class_data.Nodal[index],
+            Partner: class_data.Partner[index],
+            Public: class_data.Public[index],
+            Regional: class_data.Regional[index],
+            Seminar: class_data.Seminar[index],
+            Symposium: class_data.Symposium[index],
+            Webinar: class_data.Webinar[index]
           }));
         } else {
           transformedData = class_data.Year.map((Year, index) => ({
@@ -86,6 +81,11 @@ function createGraph_bar(
             Other: class_data.Other[index]
           }));
         }
+      } else {
+        transformedData = class_data.Year.map((Year, index) => ({
+          Year,
+          Trainees: class_data.Trainees[index]
+        }));
       }
 
       const marginStackChart = {
@@ -320,9 +320,9 @@ function createGraph_bar(
 
 createGraph_bar("Data/chart-data.csv", "#barGraph-type", "barGraph-svg", true);
 
-// createGraph(
-//   "Data/symposium-vs-rest.csv",
-//   "#barGraph-symposium",
-//   "barGraph-svg3",
-//   false
-// );
+createGraph_bar(
+  "Data/symposium-vs-rest.csv",
+  "#barGraph-symposium",
+  "barGraph-svg3",
+  false
+);
