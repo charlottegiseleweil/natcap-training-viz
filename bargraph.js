@@ -11,14 +11,19 @@ function createGraph(path, container_id, graph_id, type) {
       data = {
         Year: d.columns.slice(1),
         Intro: d[0].values,
-        Intermediate: d[1].values,
-        Advanced: d[2].values
+        Nodal: d[1].values,
+        Partner: d[2].values,
+        Public: d[3].values,
+        Regional: d[4].values,
+        Seminar: d[5].values,
+        Symposium: d[6].values,
+        Webinar: d[7].values
       };
     } else {
       data = {
         Year: d.columns.slice(1),
-        Other: d[0].values,
-        Symposiums: d[1].values
+        Symposium: d[1].values,
+        Other: d[0].values
       };
     }
 
@@ -29,23 +34,24 @@ function createGraph(path, container_id, graph_id, type) {
         transformedData = class_data.Year.map((Year, index) => ({
           Year,
           Intro: class_data.Intro[index],
-          Intermediate: class_data.Intermediate[index],
-          Advanced: class_data.Advanced[index]
+          Nodal: class_data.Nodal[index],
+          Partner: class_data.Partner[index],
+          Public: class_data.Public[index],
+          Regional: class_data.Regional[index],
+          Seminar: class_data.Seminar[index],
+          Symposium: class_data.Symposium[index],
+          Webinar: class_data.Webinar[index]
         }));
       } else {
         transformedData = class_data.Year.map((Year, index) => ({
           Year,
-          Other: class_data.Other[index],
-          Symposiums: class_data.Symposiums[index]
+          Symposium: class_data.Symposium[index],
+          Other: class_data.Other[index]
         }));
       }
 
-      if (!type) {
-        console.log(transformedData);
-      }
-
       const marginStackChart = {
-        top: 20,
+        top: 0,
         right: 20,
         bottom: 30,
         left: 40
@@ -71,11 +77,29 @@ function createGraph(path, container_id, graph_id, type) {
 
       const yStackChart = d3.scaleLinear().range([heightStackChart, 0]);
 
-      const colorStackChart = d3.scaleOrdinal([
-        "#222E50",
-        "#007991",
-        "#439A86"
-      ]);
+      const colorStackChart = d3.scaleOrdinal(
+        [
+          "#1f78b4",
+          "#a6cee3",
+          "#b2df8a",
+          "#33a02c",
+          "#fb9a99",
+          "#e31a1c",
+          "#fdbf6f",
+          "#ff7f00"
+        ]
+        // [
+        //   "#ffffd9",
+        //   "#081d58",
+        //   "#007991",
+        //   "#5B86E5",
+        //   "#7fcdbb",
+        //   "#225ea8",
+        //   "#000046",
+        //   "#253494",
+        //   "#41b6c4"
+        // ].reverse()
+      );
 
       var canvasStackChart = d3
         .select(container_id)
@@ -93,10 +117,10 @@ function createGraph(path, container_id, graph_id, type) {
         .attr(
           "transform",
           "translate(" +
-          marginStackChart.left +
-          "," +
-          marginStackChart.top +
-          ")"
+            marginStackChart.left +
+            "," +
+            marginStackChart.top +
+            ")"
         );
 
       var tooltip = d3
@@ -183,7 +207,7 @@ function createGraph(path, container_id, graph_id, type) {
             .html((d.y1 - d.y0).toFixed(0));
           d3.select(this)
             .attr("r", 10)
-            .style("fill", "#26a69a");
+            .style("fill", "#e7298a");
         })
         .on("mouseout", function(d) {
           tooltip.style("display", "none");
@@ -198,10 +222,8 @@ function createGraph(path, container_id, graph_id, type) {
       var legend = canvasStackChart
         .selectAll(".legend")
         .data(
-          colorStackChart
-          .domain()
-          .slice()
-          .reverse()
+          colorStackChart.domain().slice()
+          // .reverse()
         )
         .enter()
         .append("g")
@@ -241,16 +263,13 @@ function createGraph(path, container_id, graph_id, type) {
   });
 }
 
+// createGraph("Data/chart-data.csv", "#barGraph-levels", "barGraph-svg", true);
+
+createGraph("Data/chart-data.csv", "#barGraph-type", "barGraph-svg2", true);
+
 createGraph(
-  "Data/class-levels-all-time.csv",
-  "#barGraph-1",
-  "barGraph-svg",
-  true
+  "Data/symposium-vs-rest.csv",
+  "#barGraph-symposium",
+  "barGraph-svg3",
+  false
 );
-createGraph(
-  "Data/class-levels-all-time.csv",
-  "#barGraph-2",
-  "barGraph-svg2",
-  true
-);
-createGraph("Data/symposium-vs-rest.csv", "#barGraph-3", "barGraph-svg3", false);

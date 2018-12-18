@@ -1,7 +1,8 @@
 /*
 Make the document fill the whole viewport, this overrides any weird defaults that browsers might have.
 */
-html, body {
+html,
+body {
   height: 100%;
   margin: 0;
   /* overflow: hidden; */
@@ -29,8 +30,8 @@ body {
   height: 50vh;
 }
 
-.bottom2{
-  height: 25vh
+.bottom2 {
+  height: 25vh;
 }
 
 .legend {
@@ -42,14 +43,14 @@ body {
   width: 3em;
   height: 1.6em;
   top: 50%;
-  margin-top: -.8em;
+  margin-top: -0.8em;
   text-align: center;
   line-height: 1.6em;
 }
 
 .ui-checkboxradio-label {
   margin-left: 1em;
-  margin-right: -.5em;
+  margin-right: -0.5em;
   margin-top: -1em;
 }
 
@@ -59,7 +60,7 @@ body {
   min-width: 15px;
   height: auto;
   background: none repeat scroll 0 0 #ffffff;
-  border: 1px solid #6F257F;
+  border: 1px solid #6f257f;
   padding: 2px;
   text-align: center;
 }
@@ -69,21 +70,21 @@ body {
 }
 
 .container-1 {
-  height:100vh;
+  height: 100vh;
 }
 
 .container-2 {
-  height:55vh;
+  height: 55vh;
 }
 
-.image-1{
-  opacity:.5;
+.image-1 {
+  opacity: 0.5;
 }
 
-.last_row{
+.last_row {
   background-image: url("https://dogatekin.github.io/natcap-training-viz/images/image11.jpg");
 }
 
-.graphs{
+.graphs {
   height: 30vh;
 }
