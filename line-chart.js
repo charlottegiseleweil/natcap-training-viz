@@ -1,27 +1,58 @@
-function createGraph(path, id, code='WORLD', year='TOTAL') {
+function createGraph(path, id, byYears=false, country='WORLD', year='TOTAL') {
   d3.csv(path, (d, i, columns) => {
-    return {
-      values: columns.slice(1).map(k => +d[k]),
-      name: d['']
-    }
+    return d
   }).then((d) => {
+
+    var filtered_data = d.filter(function(x) {
+      if(byYears) {
+        return x.Year == year && x.Country == country
+      }
+      else {
+        return x.Country == country
+      }
+    });
+
+    df = {
+      Year: ["2013", "2014", "2015", "2016", "2017", "2018"],
+      Intro: [],
+      Intermediate: [],
+      Advanced: []
+    };
+
+    for (var i = 0; i < df.Year.length; i++) {
+      var filtered_data = d.filter(function(x) {
+        return x.Country == country && x.Year == df.Year[i];
+      });
+
+      if (filtered_data == []) {
+        return;
+      }
+
+      df.Advanced.push(filtered_data[0].Count);
+      df.Intermediate.push(filtered_data[1].Count);
+      df.Intro.push(filtered_data[2].Count);
+    }
+
     let data = {
-      y: "Number of Trainees",
-      series: d,
-      dates: d.columns.slice(1).map(d3.timeParse("%Y"))
+      y: "Trainee*Days",
+      series: [{name: 'Intro', values: df.Intro.map(k => +k)},
+               {name: 'Intermediate', values: df.Intermediate.map(k => +k)},
+               {name: 'Advanced', values: df.Advanced.map(k => +k)}],
+      dates: df.Year.map(d3.timeParse("%Y"))
     }
 
     function drawGraphic() {
+
       size = d3.select(id).node().parentNode.getBoundingClientRect()
 
       width = size.width
       height = size.height
 
       margin = ({
-        top: 10,
-        right: 20,
+        top: 20,
+        right: 30,
         bottom: 20,
-        left: 30
+        left: 35
       })
 
       x = d3.scaleTime()
@@ -163,5 +194,4 @@ function createGraph(path, id, code='WORLD', year='TOTAL') {
   })
 }
 
-createGraph("Data/chart-data-copy.csv", "#line-chart");
-// createGraph("Data/chart-data.csv", "#line-chart-2");
+createGraph("Data/Level_Stats.csv", "#line-chart");
