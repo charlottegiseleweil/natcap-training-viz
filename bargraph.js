@@ -14,8 +14,8 @@ function createGraph_bar(
     } else {
       return {
         values: columns.slice(1).map(k => +d[k]),
-        name: d['']
-      }
+        name: d[""]
+      };
     }
   }).then(d => {
     let data = {};
@@ -43,6 +43,10 @@ function createGraph_bar(
             return x.d.Country == country && x.d.Year == data.Year[i];
           });
 
+          if (filtered_data == []) {
+            return;
+          }
+
           data.Intro.push(filtered_data[0].d.Count);
           data.Nodal.push(filtered_data[1].d.Count);
           data.Partner.push(filtered_data[2].d.Count);
@@ -53,9 +57,6 @@ function createGraph_bar(
           data.Webinar.push(filtered_data[7].d.Count);
         }
       } else {
-        console.log(country);
-        console.log(year);
-
         var filtered_data = d.filter(function(x) {
           return x.d.Country == country && x.d.Year == year;
         });
@@ -78,13 +79,10 @@ function createGraph_bar(
         Symposium: d[1].values,
         Other: d[0].values
       };
-      console.log(d);
-
     }
 
     function drawGraph(class_data, type, country, year) {
       var transformedData = {};
-      console.log(class_data)
 
       if (year == "Total") {
         if (type) {
@@ -149,6 +147,16 @@ function createGraph_bar(
       const yStackChart = d3.scaleLinear().range([heightStackChart, 0]);
 
       const colorStackChart = d3.scaleOrdinal(
+        // [
+        //   "#225ea8",
+        //   "#41b6c4",
+        //   "#4daf4a",
+        //   "#984ea3",
+        //   "#ff7f00",
+        //   "#5B86E5",
+        //   "#e41a1c",
+        //   "#f781bf"
+        // ]
         [
           "#1f78b4",
           "#a6cee3",
@@ -160,16 +168,26 @@ function createGraph_bar(
           "#ff7f00"
         ]
         // [
+        //   "#1f78b4",
+        //   "#a6cee3",
+        //   "#b2df8a",-
+        //   "#33a02c",
+        //   "#fb9a99",
+        //   "#e31a1c",
+        //   "#fdbf6f",-
+        //   "#ff7f00"
+        // ]
+        // [
         //   "#ffffd9",
         //   "#081d58",
-        //   "#007991",
+        //   "#007991", -
         //   "#5B86E5",
         //   "#7fcdbb",
         //   "#225ea8",
         //   "#000046",
         //   "#253494",
         //   "#41b6c4"
-        // ].reverse()
+        // ] //.reverse()
       );
 
       var canvasStackChart = d3
@@ -188,10 +206,10 @@ function createGraph_bar(
         .attr(
           "transform",
           "translate(" +
-          marginStackChart.left +
-          "," +
-          marginStackChart.top +
-          ")"
+            marginStackChart.left +
+            "," +
+            marginStackChart.top +
+            ")"
         );
 
       var tooltip = d3
@@ -306,9 +324,7 @@ function createGraph_bar(
       var variable = 30;
       if (year == "Total") {
         variable = 60;
-      } // else {
-      //   variable
-      // }
+      }
 
       legend
         .append("rect")
