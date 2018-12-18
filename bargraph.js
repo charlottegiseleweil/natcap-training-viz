@@ -1,24 +1,50 @@
-function createGraph(path, container_id, graph_id, type) {
+function createGraph_bar(
+  path,
+  container_id,
+  graph_id,
+  type,
+  country = "WORLD",
+  year = "Total"
+) {
   d3.csv(path, (d, i, columns) => {
     return {
-      values: columns.slice(1).map(k => +d[k]),
-      name: d[""]
+      d
     };
+    // d3.csv(path, (d, i, columns) => {
+    //   return {
+    //     values: columns.slice(1).map(k => +d[k]),
+    //     name: d[""]
+    //   };
   }).then(d => {
     let data = {};
 
+    var filtered_data = d.filter(function(x) {
+      return x.d.Country === country && x.d.Year === year;
+    });
+
+    years = [];
+    values = [];
+    for (var i = 0; i < filtered_data.length; i++) {
+      years.push(filtered_data[i].d.Type);
+      values.push(parseInt(filtered_data[i].d.Count));
+    }
+
     if (type) {
       data = {
-        Year: d.columns.slice(1),
-        Intro: d[0].values,
-        Nodal: d[1].values,
-        Partner: d[2].values,
-        Public: d[3].values,
-        Regional: d[4].values,
-        Seminar: d[5].values,
-        Symposium: d[6].values,
-        Webinar: d[7].values
+        Year: years,
+        Values: values
       };
+      // data = {
+      //   Year: d.columns.slice(1),
+      //   Intro: d[0].values,
+      //   Nodal: d[1].values,
+      //   Partner: d[2].values,
+      //   Public: d[3].values,
+      //   Regional: d[4].values,
+      //   Seminar: d[5].values,
+      //   Symposium: d[6].values,
+      //   Webinar: d[7].values
+      // };
     } else {
       data = {
         Year: d.columns.slice(1),
@@ -33,14 +59,14 @@ function createGraph(path, container_id, graph_id, type) {
       if (type) {
         transformedData = class_data.Year.map((Year, index) => ({
           Year,
-          Intro: class_data.Intro[index],
-          Nodal: class_data.Nodal[index],
-          Partner: class_data.Partner[index],
-          Public: class_data.Public[index],
-          Regional: class_data.Regional[index],
-          Seminar: class_data.Seminar[index],
-          Symposium: class_data.Symposium[index],
-          Webinar: class_data.Webinar[index]
+          Values: class_data.Values[index]
+          // Nodal: class_data.Nodal[index],
+          // Partner: class_data.Partner[index],
+          // Public: class_data.Public[index],
+          // Regional: class_data.Regional[index],
+          // Seminar: class_data.Seminar[index],
+          // Symposium: class_data.Symposium[index],
+          // Webinar: class_data.Webinar[index]
         }));
       } else {
         transformedData = class_data.Year.map((Year, index) => ({
@@ -51,7 +77,7 @@ function createGraph(path, container_id, graph_id, type) {
       }
 
       const marginStackChart = {
-        top: 0,
+        top: 10,
         right: 20,
         bottom: 30,
         left: 40
@@ -66,7 +92,7 @@ function createGraph(path, container_id, graph_id, type) {
       height = size.height;
 
       const widthStackChart =
-        width - marginStackChart.left - marginStackChart.right - 60;
+        width - marginStackChart.left - marginStackChart.right - 20;
       const heightStackChart =
         height - marginStackChart.top - marginStackChart.bottom;
 
@@ -234,14 +260,14 @@ function createGraph(path, container_id, graph_id, type) {
 
       legend
         .append("rect")
-        .attr("x", widthStackChart + 75)
+        .attr("x", widthStackChart + 35)
         .attr("width", 18)
         .attr("height", 18)
         .style("fill", colorStackChart);
 
       legend
         .append("text")
-        .attr("x", widthStackChart + 70)
+        .attr("x", widthStackChart + 30)
         .attr("y", 9)
         .attr("dy", ".35em")
         .style("text-anchor", "end")
@@ -263,13 +289,13 @@ function createGraph(path, container_id, graph_id, type) {
   });
 }
 
-// createGraph("Data/chart-data.csv", "#barGraph-levels", "barGraph-svg", true);
+createGraph_bar("Data/Type_Stats.csv", "#barGraph-type", "barGraph-svg", true);
 
-createGraph("Data/chart-data.csv", "#barGraph-type", "barGraph-svg2", true);
+// createGraph("Data/chart-data.csv", "#barGraph-type", "barGraph-svg2", true);
 
-createGraph(
-  "Data/symposium-vs-rest.csv",
-  "#barGraph-symposium",
-  "barGraph-svg3",
-  false
-);
+// createGraph(
+//   "Data/symposium-vs-rest.csv",
+//   "#barGraph-symposium",
+//   "barGraph-svg3",
+//   false
+// );
