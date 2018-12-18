@@ -7,43 +7,16 @@ function createGraph_bar(
   year = "Total"
 ) {
   d3.csv(path, (d, i, columns) => {
-    if (country === "WORLD" && year === "Total") {
-      return {
-        values: columns.slice(1).map(k => +d[k]),
-        name: d[""]
-      };
-    } else {
-      return {
-        d
-      };
-    }
+    return {
+      d
+    };
   }).then(d => {
     let data = {};
 
-    if (country === "WORLD" && year === "Total") {
-      if (type) {
-        data = {
-          Year: d.columns.slice(1),
-          Intro: d[0].values,
-          Nodal: d[1].values,
-          Partner: d[2].values,
-          Public: d[3].values,
-          Regional: d[4].values,
-          Seminar: d[5].values,
-          Symposium: d[6].values,
-          Webinar: d[7].values
-        };
-      } else {
-        data = {
-          Year: d.columns.slice(1),
-          Symposium: d[1].values,
-          Other: d[0].values
-        };
-      }
-    } else {
-      if (year === "Total") {
+    if (type) {
+      if (year == "Total") {
         var filtered_data = d.filter(function(x) {
-          return x.d.Country === country && x.d.Year === year;
+          return x.d.Country == country && x.d.Year == year;
         });
 
         data = {
@@ -60,7 +33,7 @@ function createGraph_bar(
 
         for (var i = 0; i < data.Year.length; i++) {
           var filtered_data = d.filter(function(x) {
-            return x.d.Country === country && x.d.Year === data.Year[i];
+            return x.d.Country == country && x.d.Year == data.Year[i];
           });
 
           data.Intro.push(filtered_data[0].d.Count);
@@ -73,8 +46,11 @@ function createGraph_bar(
           data.Webinar.push(filtered_data[7].d.Count);
         }
       } else {
+        console.log(country);
+        console.log(year);
+
         var filtered_data = d.filter(function(x) {
-          return x.d.Country === country && x.d.Year === year;
+          return x.d.Country == country && x.d.Year == year;
         });
 
         years = [];
@@ -88,13 +64,20 @@ function createGraph_bar(
           Year: years,
           Trainees: values
         };
+        console.log(data);
       }
+    } else {
+      data = {
+        Year: d.columns.slice(1),
+        Symposium: d[1].values,
+        Other: d[0].values
+      };
     }
 
     function drawGraph(class_data, type, country, year) {
       var transformedData = {};
 
-      if (year === "Total") {
+      if (year == "Total") {
         if (type) {
           transformedData = class_data.Year.map((Year, index) => ({
             Year,
@@ -138,7 +121,7 @@ function createGraph_bar(
 
       var widthStackChart = 0;
 
-      if (year === "Total") {
+      if (year == "Total") {
         widthStackChart =
           width - marginStackChart.left - marginStackChart.right - 60;
       } else {
@@ -312,7 +295,7 @@ function createGraph_bar(
         });
 
       var variable = 30;
-      if (year === "Total") {
+      if (year == "Total") {
         variable = 60;
       } // else {
       //   variable
@@ -349,13 +332,11 @@ function createGraph_bar(
   });
 }
 
-// createGraph_bar("Data/Type_Stats.csv", "#barGraph-type", "barGraph-svg", true);
+createGraph_bar("Data/Type_Stats.csv", "#barGraph-type", "barGraph-svg", true);
 
-createGraph_bar("Data/chart-data.csv", "#barGraph-type", "barGraph-svg", true);
-
-createGraph_bar(
-  "Data/symposium-vs-rest.csv",
-  "#barGraph-symposium",
-  "barGraph-svg3",
-  false
-);
+// createGraph_bar(
+//   "Data/symposium-vs-rest.csv",
+//   "#barGraph-symposium",
+//   "barGraph-svg3",
+//   false
+// );
