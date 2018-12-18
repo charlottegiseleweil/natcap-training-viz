@@ -7,9 +7,16 @@ function createGraph_bar(
   year = "Total"
 ) {
   d3.csv(path, (d, i, columns) => {
-    return {
-      d
-    };
+    if (type) {
+      return {
+        d
+      };
+    } else {
+      return {
+        values: columns.slice(1).map(k => +d[k]),
+        name: d['']
+      }
+    }
   }).then(d => {
     let data = {};
 
@@ -64,7 +71,6 @@ function createGraph_bar(
           Year: years,
           Trainees: values
         };
-        console.log(data);
       }
     } else {
       data = {
@@ -72,10 +78,13 @@ function createGraph_bar(
         Symposium: d[1].values,
         Other: d[0].values
       };
+      console.log(d);
+
     }
 
     function drawGraph(class_data, type, country, year) {
       var transformedData = {};
+      console.log(class_data)
 
       if (year == "Total") {
         if (type) {
@@ -179,10 +188,10 @@ function createGraph_bar(
         .attr(
           "transform",
           "translate(" +
-            marginStackChart.left +
-            "," +
-            marginStackChart.top +
-            ")"
+          marginStackChart.left +
+          "," +
+          marginStackChart.top +
+          ")"
         );
 
       var tooltip = d3
@@ -334,9 +343,9 @@ function createGraph_bar(
 
 createGraph_bar("Data/Type_Stats.csv", "#barGraph-type", "barGraph-svg", true);
 
-// createGraph_bar(
-//   "Data/symposium-vs-rest.csv",
-//   "#barGraph-symposium",
-//   "barGraph-svg3",
-//   false
-// );
+createGraph_bar(
+  "Data/symposium-vs-rest.csv",
+  "#barGraph-symposium",
+  "barGraph-svg3",
+  false
+);
