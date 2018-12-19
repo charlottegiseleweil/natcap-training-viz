@@ -346,6 +346,7 @@ function createGraph_bar(
     }
 
     function resize() {
+      if(!(graph_id == 'barGraph-svg2' && currentYear == 'Total'))
       var s = d3.select("#" + graph_id);
       s = s.remove();
       drawGraph(data, type, country, year);
