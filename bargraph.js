@@ -171,49 +171,16 @@ function createGraph_bar(
 
       const yStackChart = d3.scaleLinear().range([heightStackChart, 0]);
 
-      const colorStackChart = d3.scaleOrdinal(
-        // [
-        //   "#225ea8",
-        //   "#41b6c4",
-        //   "#4daf4a",
-        //   "#984ea3",
-        //   "#ff7f00",
-        //   "#5B86E5",
-        //   "#e41a1c",
-        //   "#f781bf"
-        // ]
-        [
-          "#1f78b4",
-          "#a6cee3",
-          "#b2df8a",
-          "#33a02c",
-          "#fb9a99",
-          "#e31a1c",
-          "#fdbf6f",
-          "#ff7f00"
-        ]
-        // [
-        //   "#1f78b4",
-        //   "#a6cee3",
-        //   "#b2df8a",-
-        //   "#33a02c",
-        //   "#fb9a99",
-        //   "#e31a1c",
-        //   "#fdbf6f",-
-        //   "#ff7f00"
-        // ]
-        // [
-        //   "#ffffd9",
-        //   "#081d58",
-        //   "#007991", -
-        //   "#5B86E5",
-        //   "#7fcdbb",
-        //   "#225ea8",
-        //   "#000046",
-        //   "#253494",
-        //   "#41b6c4"
-        // ] //.reverse()
-      );
+      const colorStackChart = d3.scaleOrdinal([
+        "#1f78b4",
+        "#a6cee3",
+        "#b2df8a",
+        "#33a02c",
+        "#fb9a99",
+        "#e31a1c",
+        "#fdbf6f",
+        "#ff7f00"
+      ]);
 
       var canvasStackChart = d3
         .select(container_id)
@@ -371,7 +338,8 @@ function createGraph_bar(
     }
 
     function resize() {
-      var s = d3.select("#" + graph_id);
+      if (!(graph_id == "barGraph-svg2" && currentYear == "Total"))
+        var s = d3.select("#" + graph_id);
       s = s.remove();
       drawGraph(data, type, country, year);
     }
