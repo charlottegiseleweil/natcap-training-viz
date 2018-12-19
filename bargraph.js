@@ -7,7 +7,7 @@ function createGraph_bar(
   year = "Total"
 ) {
   d3.csv(path, (d, i, columns) => {
-    if (type) {
+    if (type !== 1) {
       return {
         d
       };
@@ -20,7 +20,7 @@ function createGraph_bar(
   }).then(d => {
     let data = {};
 
-    if (type) {
+    if (type !== 1) {
       if (year == "Total") {
         var filtered_data = d.filter(function(x) {
           return x.d.Country == country && x.d.Year == year;
@@ -81,11 +81,29 @@ function createGraph_bar(
       };
     }
 
+    if (type === 2) {
+      var filtered_data = d.filter(function(x) {
+        return x.d.Country == country && x.d.Year == year;
+      });
+
+      years = [];
+      values = [];
+      for (var i = filtered_data.length - 1; i >= 0; i--) {
+        years.push(filtered_data[i].d.Type);
+        values.push(parseInt(filtered_data[i].d.Count));
+      }
+
+      data = {
+        Year: years,
+        Trainees: values
+      };
+    }
+
     function drawGraph(class_data, type, country, year) {
       var transformedData = {};
 
       if (year == "Total") {
-        if (type) {
+        if (type === 0) {
           transformedData = class_data.Year.map((Year, index) => ({
             Year,
             Intro: class_data.Intro[index],
@@ -105,6 +123,13 @@ function createGraph_bar(
           }));
         }
       } else {
+        transformedData = class_data.Year.map((Year, index) => ({
+          Year,
+          Trainees: class_data.Trainees[index]
+        }));
+      }
+
+      if (type === 2) {
         transformedData = class_data.Year.map((Year, index) => ({
           Year,
           Trainees: class_data.Trainees[index]
@@ -312,7 +337,7 @@ function createGraph_bar(
         .selectAll(".legend")
         .data(
           colorStackChart.domain().slice()
-          .reverse()
+          // .reverse()
         )
         .enter()
         .append("g")
@@ -322,7 +347,7 @@ function createGraph_bar(
         });
 
       var variable = 30;
-      if (year == "Total") {
+      if (year === "Total") {
         variable = 60;
       }
 
@@ -346,7 +371,6 @@ function createGraph_bar(
     }
 
     function resize() {
-      if(!(graph_id == 'barGraph-svg2' && currentYear == 'Total'))
       var s = d3.select("#" + graph_id);
       s = s.remove();
       drawGraph(data, type, country, year);
@@ -358,11 +382,11 @@ function createGraph_bar(
   });
 }
 
-createGraph_bar("Data/Type_Stats.csv", "#barGraph-type", "barGraph-svg", true);
+createGraph_bar("Data/Type_Stats.csv", "#barGraph-type", "barGraph-svg", 0);
 
 createGraph_bar(
   "Data/symposium-vs-rest.csv",
   "#barGraph-symposium",
   "barGraph-svg3",
-  false
+  1
 );

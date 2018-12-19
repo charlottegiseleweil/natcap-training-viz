@@ -74,26 +74,33 @@ $.when($.getJSON("Data/data.json"), $.getJSON("Data/zeros.json")).done(function(
             "Data/Type_Stats.csv",
             "#barGraph-type",
             "barGraph-svg",
-            true,
+            0,
             currentCountry,
             "" + currentYear
           );
 
-          if(currentYear == 'Total') {
-            var s = d3.select('#line-chart');
-            var parent = s.node().parentNode
+          if (currentYear == "Total") {
+            var s = d3.select("#line-chart");
+            var parent = s.node().parentNode;
             s = s.remove();
-            d3.select(parent).append('svg').attr('id', 'line-chart')
-            createGraph("Data/Level_Stats.csv", "#line-chart", false, currentCountry, "" + currentYear);
-          }
-          else {
+            d3.select(parent)
+              .append("svg")
+              .attr("id", "line-chart");
+            createGraph(
+              "Data/Level_Stats.csv",
+              "#line-chart",
+              false,
+              currentCountry,
+              "" + currentYear
+            );
+          } else {
             var s = d3.select("#barGraph-svg2");
             s = s.remove();
             createGraph_bar(
               "Data/Level_Stats.csv",
               "#types",
               "barGraph-svg2",
-              true,
+              2,
               currentCountry,
               "" + currentYear
             );
@@ -116,26 +123,33 @@ $.when($.getJSON("Data/data.json"), $.getJSON("Data/zeros.json")).done(function(
             "Data/Type_Stats.csv",
             "#barGraph-type",
             "barGraph-svg",
-            true,
+            0,
             currentCountry,
             "" + currentYear
           );
 
-          if(currentYear == 'Total') {
-            var s = d3.select('#line-chart');
-            var parent = s.node().parentNode
+          if (currentYear == "Total") {
+            var s = d3.select("#line-chart");
+            var parent = s.node().parentNode;
             s = s.remove();
-            d3.select(parent).append('svg').attr('id', 'line-chart')
-            createGraph("Data/Level_Stats.csv", "#line-chart", false, currentCountry, "" + currentYear);
-          }
-          else {
+            d3.select(parent)
+              .append("svg")
+              .attr("id", "line-chart");
+            createGraph(
+              "Data/Level_Stats.csv",
+              "#line-chart",
+              false,
+              currentCountry,
+              "" + currentYear
+            );
+          } else {
             var s = d3.select("#barGraph-svg2");
             s = s.remove();
             createGraph_bar(
               "Data/Level_Stats.csv",
               "#types",
               "barGraph-svg2",
-              true,
+              2,
               currentCountry,
               "" + currentYear
             );
@@ -163,14 +177,14 @@ function totalOrYears(checked) {
     // Paint the new ones
     map.series.regions[0].setValues(data[latestYear]);
     // Update level chart
-    var s = d3.select('#line-chart');
-    var parent = s.node().parentNode
+    var s = d3.select("#line-chart");
+    var parent = s.node().parentNode;
     s = s.remove();
     createGraph_bar(
       "Data/Level_Stats.csv",
       "#types",
       "barGraph-svg2",
-      true,
+      2,
       currentCountry,
       "" + currentYear
     );
@@ -185,11 +199,19 @@ function totalOrYears(checked) {
     // Paint the new ones
     map.series.regions[0].setValues(data["Total"]);
     // Update level chart
-    var s = d3.select('#barGraph-svg2');
-    var parent = s.node().parentNode
+    var s = d3.select("#barGraph-svg2");
+    var parent = s.node().parentNode;
     s = s.remove();
-    d3.select(parent).append('svg').attr('id', 'line-chart')
-    createGraph("Data/Level_Stats.csv", "#line-chart", false, currentCountry, "" + currentYear);
+    d3.select(parent)
+      .append("svg")
+      .attr("id", "line-chart");
+    createGraph(
+      "Data/Level_Stats.csv",
+      "#line-chart",
+      false,
+      currentCountry,
+      "" + currentYear
+    );
   }
 
   var s = d3.select("#barGraph-svg");
@@ -198,7 +220,7 @@ function totalOrYears(checked) {
     "Data/Type_Stats.csv",
     "#barGraph-type",
     "barGraph-svg",
-    true,
+    0,
     currentCountry,
     "" + currentYear
   );
@@ -212,7 +234,7 @@ function yearChanged(val) {
   // Paint the new ones
   map.series.regions[0].setValues(data[val]);
   // Change text
-  d3.select('#current-year').text(val)
+  d3.select("#current-year").text(val);
 
   var s = d3.select("#barGraph-svg");
   s = s.remove();
@@ -220,7 +242,7 @@ function yearChanged(val) {
     "Data/Type_Stats.csv",
     "#barGraph-type",
     "barGraph-svg",
-    true,
+    0,
     currentCountry,
     "" + currentYear
   );
@@ -231,7 +253,7 @@ function yearChanged(val) {
     "Data/Level_Stats.csv",
     "#types",
     "barGraph-svg2",
-    true,
+    2,
     currentCountry,
     "" + currentYear
   );
