@@ -49,7 +49,7 @@ function createGraph(path, id, byYears=false, country='WORLD', year='TOTAL') {
       height = size.height
 
       margin = ({
-        top: 20,
+        top: 15,
         right: 30,
         bottom: 20,
         left: 35
