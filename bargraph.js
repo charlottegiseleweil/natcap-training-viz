@@ -312,7 +312,7 @@ function createGraph_bar(
         .selectAll(".legend")
         .data(
           colorStackChart.domain().slice()
-          // .reverse()
+          .reverse()
         )
         .enter()
         .append("g")
