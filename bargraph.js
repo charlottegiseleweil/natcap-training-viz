@@ -303,8 +303,10 @@ function createGraph_bar(
       var legend = canvasStackChart
         .selectAll(".legend")
         .data(
-          colorStackChart.domain().slice()
-          // .reverse()
+          colorStackChart
+            .domain()
+            .slice()
+            .reverse()
         )
         .enter()
         .append("g")
