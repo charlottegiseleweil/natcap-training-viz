@@ -343,7 +343,7 @@ function createGraph_bar(
           return "translate(0," + i * 17 + ")";
         });
 
-      var variable = 30;
+      var variable = 35;
       if (year === "Total") {
         variable = 60;
       }

@@ -115,7 +115,8 @@ function createGraph(path, id, byYears=false, country='WORLD', year='TOTAL') {
 
       svg.append("g")
         .attr("class", "legendOrdinal")
-        .attr("transform", "translate(400,20)")
+        .attr("transform", "translate(370,20)")
+        .attr("transform", "translate(" + (width - margin.right - 60) + "," + 20 + ")")
         .attr('font-size', 11);
 
       var legendOrdinal = d3.legendColor()
