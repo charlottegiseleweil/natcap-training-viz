@@ -267,6 +267,13 @@ function createGraph_bar(
           .style("text-anchor", "middle")
           .text("Attendees");
       } else {
+        var ylabel;
+        if (graph_id === "barGraph-svg") {
+          ylabel = "Trainees";
+        } else {
+          ylabel = "Trainee*Days";
+        }
+
         canvasStackChart
           .append("text")
           .attr("transform", "rotate(-90)")
@@ -274,7 +281,7 @@ function createGraph_bar(
           .attr("x", 0 - heightStackChart / 2)
           .attr("dy", "1em")
           .style("text-anchor", "middle")
-          .text("Trainee*Days");
+          .text(ylabel);
       }
 
       var state = canvasStackChart
