@@ -190,7 +190,7 @@ function createGraph(path, id, byYears=false, country='WORLD', year='TOTAL') {
           const s = data.series.reduce((a, b) => Math.abs(a.values[i] - ym) < Math.abs(b.values[i] - ym) ? a : b);
           path.attr("stroke", d => d === s ? typecolors(d) : "#ddd").filter(d => d === s).raise();
           dot.attr("transform", `translate(${x(data.dates[i])},${y(s.values[i])})`);
-          dot.select("text").text(s.name);
+          dot.select("text").text(s.values[i]);
         }
 
         function entered() {
