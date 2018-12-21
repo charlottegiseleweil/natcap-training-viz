@@ -171,16 +171,22 @@ function createGraph_bar(
 
       const yStackChart = d3.scaleLinear().range([heightStackChart, 0]);
 
-      const colorStackChart = d3.scaleOrdinal([
-        "#33a02c",
-        "#b2df8a",
-        "#1f78b4",
-        "#a6cee3",
-        "#D2691E",
-        "#fdbf6f",
-        "#FFD700",
-        "#DC143C"
-      ]);
+      var colorStackChart;
+
+      if (type !== 2) {
+        colorStackChart = d3.scaleOrdinal([
+          "#33a02c",
+          "#b2df8a",
+          "#1f78b4",
+          "#a6cee3",
+          "#D2691E",
+          "#fdbf6f",
+          "#FFD700",
+          "#DC143C"
+        ]);
+      } else {
+        colorStackChart = d3.scaleOrdinal(["#1f78b4"]);
+      }
 
       var canvasStackChart = d3
         .select(container_id)
