@@ -34,7 +34,7 @@ function createGraph(path, id, byYears=false, country='WORLD', year='TOTAL') {
     }
 
     let data = {
-      y: "Trainee*Days",
+      y: "",
       series: [{name: 'Intro', values: df.Intro.map(k => +k)},
                {name: 'Intermediate', values: df.Intermediate.map(k => +k)},
                {name: 'Advanced', values: df.Advanced.map(k => +k)}],
@@ -52,7 +52,7 @@ function createGraph(path, id, byYears=false, country='WORLD', year='TOTAL') {
         top: 15,
         right: 30,
         bottom: 20,
-        left: 35
+        left: 55
       })
 
       x = d3.scaleTime()
@@ -75,7 +75,7 @@ function createGraph(path, id, byYears=false, country='WORLD', year='TOTAL') {
       yAxis = g => g
         .attr("transform", `translate(${margin.left},0)`)
         .call(d3.axisLeft(y))
-        .call(g => g.select(".domain").remove())
+        // .call(g => g.select(".domain").remove())
         .call(g => g.select(".tick:last-of-type text").clone()
           .attr("x", 3)
           .attr("text-anchor", "start")
@@ -133,6 +133,14 @@ function createGraph(path, id, byYears=false, country='WORLD', year='TOTAL') {
 
       svg.select(".legendOrdinal")
         .call(legendOrdinal);
+
+      svg.append("text")
+          .attr("transform", "rotate(-90)")
+          .attr("y", 0)
+          .attr("x",0 - (height / 2))
+          .attr("dy", "1em")
+          .style("text-anchor", "middle")
+          .text("Trainee*Days");
 
       function typecolors(d) {
         switch (d.name) {
