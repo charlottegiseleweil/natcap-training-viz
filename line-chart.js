@@ -219,4 +219,5 @@ function createGraph(path, id, byYears=false, country='WORLD', year='TOTAL') {
   })
 }
 
+
 createGraph("Data/Level_Stats.csv", "#line-chart");
