@@ -57,7 +57,7 @@ function createGraph(path, id, byYears=false, country='WORLD', year='TOTAL') {
 
       x = d3.scaleTime()
         .domain(d3.extent(data.dates))
-        .range([margin.left, width - margin.right])
+        .range([margin.left, width - margin.right - 80])
 
       y = d3.scaleLinear()
         .domain([0, d3.max(data.series, d => d3.max(d.values))]).nice()
@@ -108,6 +108,30 @@ function createGraph(path, id, byYears=false, country='WORLD', year='TOTAL') {
 
       svg.call(hover, path);
       // svg.call(responsivefy);
+
+      var ordinal = d3.scaleOrdinal()
+        .domain(["Intro", "Intermediate", "Advanced"])
+        .range([ "#66c2a5", "#fc8d62", "#e78ac3"]);
+
+      svg.append("g")
+        .attr("class", "legendOrdinal")
+        .attr("transform", "translate(400,20)")
+        .attr('font-size', 11);
+
+      var legendOrdinal = d3.legendColor()
+        //d3 symbol creates a path-string, for example
+        //"M0,-8.059274488676564L9.306048591020996,
+        //8.059274488676564 -9.306048591020996,8.059274488676564Z"
+        // .shape("path", d3.symbol().type(d3.symbolTriangle).size(150)())
+        // .shapePadding(10)
+        //use cellFilter to hide the "e" cell
+        // .orient('horizontal')
+        // .labelAlign("end")
+        .cellFilter(function(d){ return d.label !== "e" })
+        .scale(ordinal);
+
+      svg.select(".legendOrdinal")
+        .call(legendOrdinal);
 
       function typecolors(d) {
         switch (d.name) {

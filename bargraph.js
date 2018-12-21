@@ -350,17 +350,17 @@ function createGraph_bar(
 
       legend
         .append("rect")
-        .attr("x", widthStackChart + variable + 5)
+        .attr("x", widthStackChart + variable - 35)
         .attr("width", 15)
         .attr("height", 15)
         .style("fill", colorStackChart);
 
       legend
         .append("text")
-        .attr("x", widthStackChart + variable)
+        .attr("x", widthStackChart + variable - 15)
         .attr("y", 9)
         .attr("dy", ".35em")
-        .style("text-anchor", "end")
+        .style("text-anchor", "start")
         .style("font-size", "10px")
         .text(function(d) {
           return d;
