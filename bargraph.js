@@ -140,7 +140,7 @@ function createGraph_bar(
         top: 10,
         right: 20,
         bottom: 30,
-        left: 40
+        left: 50
       };
 
       size = d3
@@ -172,14 +172,14 @@ function createGraph_bar(
       const yStackChart = d3.scaleLinear().range([heightStackChart, 0]);
 
       const colorStackChart = d3.scaleOrdinal([
+        "#33a02c",
+        "#b2df8a",
         "#1f78b4",
         "#a6cee3",
-        "#b2df8a",
-        "#33a02c",
-        "#fb9a99",
-        "#e31a1c",
+        "#D2691E",
         "#fdbf6f",
-        "#ff7f00"
+        "#FFD700",
+        "#DC143C"
       ]);
 
       var canvasStackChart = d3
@@ -249,12 +249,27 @@ function createGraph_bar(
       canvasStackChart
         .append("g")
         .attr("class", "y axis")
-        .call(d3.axisLeft(yStackChart))
-        .append("text")
-        .attr("transform", "rotate(-90)")
-        .attr("y", 6)
-        .attr("dy", ".71em")
-        .style("text-anchor", "end");
+        .call(d3.axisLeft(yStackChart));
+
+      if (type === 1) {
+        canvasStackChart
+          .append("text")
+          .attr("transform", "rotate(-90)")
+          .attr("y", 0 - marginStackChart.left)
+          .attr("x", 0 - heightStackChart / 2)
+          .attr("dy", "1em")
+          .style("text-anchor", "middle")
+          .text("Attendees");
+      } else {
+        canvasStackChart
+          .append("text")
+          .attr("transform", "rotate(-90)")
+          .attr("y", 0 - marginStackChart.left)
+          .attr("x", 0 - heightStackChart / 2)
+          .attr("dy", "1em")
+          .style("text-anchor", "middle")
+          .text("Trainee*Days");
+      }
 
       var state = canvasStackChart
         .selectAll(".Year")
@@ -288,7 +303,7 @@ function createGraph_bar(
             .html((d.y1 - d.y0).toFixed(0));
           d3.select(this)
             .attr("r", 10)
-            .style("fill", "#e7298a");
+            .style("fill", "#F08080");
         })
         .on("mouseout", function(d) {
           tooltip.style("display", "none");
@@ -312,7 +327,7 @@ function createGraph_bar(
         .append("g")
         .attr("class", "legend")
         .attr("transform", function(d, i) {
-          return "translate(0," + i * 20 + ")";
+          return "translate(0," + i * 17 + ")";
         });
 
       var variable = 30;
@@ -323,8 +338,8 @@ function createGraph_bar(
       legend
         .append("rect")
         .attr("x", widthStackChart + variable + 5)
-        .attr("width", 18)
-        .attr("height", 18)
+        .attr("width", 15)
+        .attr("height", 15)
         .style("fill", colorStackChart);
 
       legend
@@ -333,7 +348,7 @@ function createGraph_bar(
         .attr("y", 9)
         .attr("dy", ".35em")
         .style("text-anchor", "end")
-        .style("font-size", "12px")
+        .style("font-size", "10px")
         .text(function(d) {
           return d;
         });

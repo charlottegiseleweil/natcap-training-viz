@@ -1,32 +1,23 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <link
-      type="text/css"
-      rel="stylesheet"
-      media="all"
-      href="styles/materialize.min.css"
-    />
-    <link
-      type="text/css"
-      rel="stylesheet"
-      media="all"
-      href="styles/jquery-jvectormap-2.0.3.css"
-    />
-    <!--
+
+<head>
+  <link type="text/css" rel="stylesheet" media="all" href="styles/materialize.min.css" />
+  <link type="text/css" rel="stylesheet" media="all" href="styles/jquery-jvectormap-2.0.3.css" />
+  <!--
       <link type="text/css" rel="stylesheet" media="all" href="styles/jquery-ui.min.css" />
     -->
-    <link type="text/css" rel="stylesheet" media="all" href="style.css" />
+  <link type="text/css" rel="stylesheet" media="all" href="style.css" />
 
-    <script src="scripts/jquery-3.3.1.min.js"></script>
-    <script src="scripts/jquery-jvectormap-2.0.3.min.js"></script>
-    <script src="scripts/jquery-jvectormap-world-mill.js"></script>
-    <!-- <script src="scripts/jquery-ui.min.js"></script> -->
-    <script src="scripts/d3.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-tip/0.7.1/d3-tip.min.js"></script>
+  <script src="scripts/jquery-3.3.1.min.js"></script>
+  <script src="scripts/jquery-jvectormap-2.0.3.min.js"></script>
+  <script src="scripts/jquery-jvectormap-world-mill.js"></script>
+  <!-- <script src="scripts/jquery-ui.min.js"></script> -->
+  <script src="scripts/d3.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-tip/0.7.1/d3-tip.min.js"></script>
 
-    <script>
-      $(document).ready(function() {
+  <script>
+    $(document).ready(function() {
         $(".parallax").parallax();
       });
       $(document).ready(function() {
@@ -34,8 +25,8 @@
       });
     </script>
 
-    <script>
-      function redrawGraphs() {
+  <script>
+    function redrawGraphs() {
         var s = d3.select("#barGraph-svg3");
         s = s.remove();
 
@@ -57,309 +48,216 @@
       }
     </script>
 
-    <!-- Let browser know website is optimized for mobile -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  </head>
+  <!-- Let browser know website is optimized for mobile -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</head>
 
-  <body>
-    <div>
-      <div class="parallax-container container-1">
-        <div class="parallax" style="opacity:.85;">
-          <img
-            src="https://dogatekin.github.io/natcap-training-viz/images/image101.jpg"
-          />
-        </div>
-        <div class="row" style="height:2vh;"></div>
-        <h1
-          class="white-text text-darken-1"
-          style="text-align: center; font-weight: bold; font-size:3vw;"
-        >
-          Natural Capital Project Training Program
-        </h1>
-
-        <div class="row" style="text-align: center;">
-          <div class="col s10 m2 offset-s1 offset-m1">
-            <div
-              class="card-panel z-depth-1 grey lighten-4"
-              style="opacity: .87; font-size: 1vw; height:15vh;"
-            >
-              <div class="card-title grey-text text-darken-2">
-                Number Of Countries We Trained In
-              </div>
-              <div
-                class="card-content red-text flow-text"
-                style="font-size:1.5vw;"
-              >
-                29
-              </div>
-            </div>
-          </div>
-
-          <div class="col s10 m2 offset-s1">
-            <div
-              class="card-panel z-depth-1 grey lighten-4"
-              style="opacity: .87; font-size: 1vw;height:15vh;"
-            >
-              <div class="card-content grey-text text-darken-2">
-                Number Of People We Have Trained
-              </div>
-              <div
-                class="card-content red-text flow-text"
-                style="font-size:1.5vw;"
-              >
-                3685
-              </div>
-            </div>
-          </div>
-
-          <div class="col s10 m2 offset-s1">
-            <div
-              class="card-panel z-depth-1 grey lighten-4"
-              style="opacity: .87; font-size: 1vw;height:15vh;"
-            >
-              <div class="card-content grey-text text-darken-2">
-                Number of Countries Trainees Come From
-              </div>
-              <div
-                class="card-content red-text flow-text"
-                style="font-size:1.5vw;"
-              >
-                89
-              </div>
-            </div>
-          </div>
-
-          <div class="col s10 m2 offset-s1">
-            <div
-              class="card-panel z-depth-1 grey lighten-4"
-              style="opacity: .87; font-size: 1vw;height:15vh;"
-            >
-              <div class="card-content grey-text text-darken-2">
-                Total Number of Trainers Worldwide
-              </div>
-              <div
-                class="card-content red-text flow-text"
-                style="font-size:1.5vw;"
-              >
-                124
-              </div>
-            </div>
-          </div>
-
-          <div class="col s10 m2 offset-s1">
-            <div
-              class="card-panel z-depth-1 grey lighten-4"
-              style="opacity: .87; font-size: 1vw;height:15vh;"
-            >
-              <div class="card-content grey-text text-darken-2">
-                Total Number of Symposium Attendees
-              </div>
-              <div
-                class="card-content red-text flow-text"
-                style="font-size:1.5vw;"
-              >
-                1223
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="row" style="margin-bottom:0px;">
-          <div class="col s10 m5 offset-m1 offset-s1">
-            <div
-              class="card z-depth-1 grey lighten-4"
-              style="opacity: .87; height:20vh;"
-            >
-              <div class="card-tabs">
-                <ul
-                  class="tabs tabs-fixed-width valign-wrapper"
-                  style="height:5vh;"
-                >
-                  <li class="tab"><a>About the Symposium</a></li>
-                </ul>
-              </div>
-              <div class="card-content center">
-                <p>The Symposium is great!</p>
-              </div>
-            </div>
-            <div
-              class="card z-depth-1 grey lighten-4"
-              style="opacity: .87; height:33.40vh;"
-            >
-              <div class="card-tabs" onclick="redrawGraphs()">
-                <ul
-                  class="tabs tabs-fixed-width valign-wrapper"
-                  style="height:5vh;"
-                >
-                  <!-- <li class="tab"><a>Versus Other Trainings</a></li> -->
-                  <li class="tab">
-                    <a class="active" href="#test1">OVER THE Years</a>
-                  </li>
-                  <li class="tab">
-                    <a href="#barGraph-symposium"
-                      >Symposium Attendees vs. Others</a
-                    >
-                  </li>
-                </ul>
-              </div>
-              <div class="card-content" style="height:30vh;">
-                <div id="test1" class="bottom2" style="height:100%;">
-                  <svg id="area-chart"></svg>
-                </div>
-                <div
-                  id="barGraph-symposium"
-                  class="bottom2"
-                  style="height:100%;"
-                ></div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col s10 m5 offset-s1">
-            <div
-              class="card z-depth-1 grey lighten-4"
-              style="opacity: .87; height:50vh;"
-            >
-              <div class="card-tabs">
-                <ul
-                  class="tabs tabs-fixed-width valign-wrapper"
-                  style="height:5vh;"
-                >
-                  <li class="tab"><a>Join Us next year!</a></li>
-                </ul>
-              </div>
-              <div style="height:100%">
-                <iframe
-                  style="position: relative; height: 100%; width: 100%;"
-                  src="https://www.youtube.com/embed/K-Imq0NEr8Y"
-                  frameborder="0"
-                  allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                  allowfullscreen
-                ></iframe>
-              </div>
-            </div>
-          </div>
-        </div>
+<body>
+  <div>
+    <div class="parallax-container container-1">
+      <div class="parallax" style="opacity:.85;">
+        <img src="https://dogatekin.github.io/natcap-training-viz/images/image101.jpg" />
       </div>
-    </div>
-
-    <div class="last_row" style="height:100vh; overflow:hidden;">
-      <div class="row" style="height:0vh;"></div>
-      <h1
-        class="white-text text-darken-1"
-        style="text-align: center; font-weight: bold;font-size:3vw;"
-      >
-        Explore Our Program
+      <div class="row" style="height:2vh;"></div>
+      <h1 class="white-text text-darken-1" style="text-align: center; font-weight: bold; font-size:3vw;">
+        Natural Capital Project Training Program
       </h1>
-      <div class="row" style="margin-top:0px;">
-        <div class="col s10 m6 offset-m1 offset-s1">
-          <div
-            class="card z-depth-1 grey lighten-4"
-            style="opacity: .95; height:16.5vh;"
-          >
-            <div class="card-tabs">
-              <ul
-                class="tabs tabs-fixed-width valign-wrapper"
-                style="height:5vh;"
-              >
-                <li class="tab"><a>Explore</a></li>
-              </ul>
+
+      <div class="row" style="text-align: center;">
+        <div class="col s10 m2 offset-s1 offset-m1">
+          <div class="card-panel z-depth-1 grey lighten-4" style="opacity: .87; font-size: 1vw; height:15vh;">
+            <div class="card-title grey-text text-darken-2">
+              Number Of Countries We Trained In
             </div>
-            <div class="card-content center"><p>Use the Map below!</p></div>
-          </div>
-          <div class=" card z-depth-1 grey lighten-4" style="opacity: .95;">
-            <div class="card-tabs">
-              <ul
-                class="tabs tabs-fixed-width valign-wrapper"
-                style="height:5vh;"
-              >
-                <li class="tab"><a>World Map</a></li>
-              </ul>
-            </div>
-            <div
-              id="world-map"
-              class="card-image worldmap"
-              style="height:47.5vh;"
-            ></div>
-            <div class=" card-action scrolly grey">
-              <div class="row">
-                <div class="col s4">
-                  <div class="switch" style="margin-top: -.6em;">
-                    <label class="white-text">
-                      Total
-                      <input
-                        type="checkbox"
-                        oninput="totalOrYears(this.checked)"
-                      />
-                      <span class="lever"></span> By Years
-                    </label>
-                  </div>
-                </div>
-                <div class="col s8">
-                  <div class="col s2" id="current-year">2018</div>
-                  <div class="col s10">
-                    <form action="#">
-                      <p class="range-field" style="margin-top: -.8em;">
-                        <input
-                          type="range"
-                          class="yearslider"
-                          id="year-slider"
-                          min="2013"
-                          max="2018"
-                          oninput="yearChanged(this.value)"
-                          value="2018"
-                        />
-                      </p>
-                    </form>
-                  </div>
-                </div>
-              </div>
+            <div class="card-content red-text flow-text" style="font-size:1.5vw;">
+              29
             </div>
           </div>
         </div>
-        <div class="col s10 m4 offset-s1">
-          <div
-            class="card z-depth-1 grey lighten-4"
-            style="opacity: .95; height:37vh;"
-          >
-            <div class="card-tabs">
-              <ul
-                class="tabs tabs-fixed-width valign-wrapper"
-                style="height:5vh;"
-              >
-                <li class="tab"><a>Training Types</a></li>
-              </ul>
+
+        <div class="col s10 m2 offset-s1">
+          <div class="card-panel z-depth-1 grey lighten-4" style="opacity: .87; font-size: 1vw;height:15vh;">
+            <div class="card-content grey-text text-darken-2">
+              Number Of People We Have Trained
             </div>
-            <div class="card-content" style="height:32vh;">
-              <div id="barGraph-type" class="graphs" style="height:100%;"></div>
+            <div class="card-content red-text flow-text" style="font-size:1.5vw;">
+              3685
             </div>
           </div>
-          <div
-            class="card z-depth-1 grey lighten-4"
-            style="opacity: .95; height:37vh;"
-          >
+        </div>
+
+        <div class="col s10 m2 offset-s1">
+          <div class="card-panel z-depth-1 grey lighten-4" style="opacity: .87; font-size: 1vw;height:15vh;">
+            <div class="card-content grey-text text-darken-2">
+              Number of Countries Trainees Come From
+            </div>
+            <div class="card-content red-text flow-text" style="font-size:1.5vw;">
+              89
+            </div>
+          </div>
+        </div>
+
+        <div class="col s10 m2 offset-s1">
+          <div class="card-panel z-depth-1 grey lighten-4" style="opacity: .87; font-size: 1vw;height:15vh;">
+            <div class="card-content grey-text text-darken-2">
+              Total Number of Trainers Worldwide
+            </div>
+            <div class="card-content red-text flow-text" style="font-size:1.5vw;">
+              124
+            </div>
+          </div>
+        </div>
+
+        <div class="col s10 m2 offset-s1">
+          <div class="card-panel z-depth-1 grey lighten-4" style="opacity: .87; font-size: 1vw;height:15vh;">
+            <div class="card-content grey-text text-darken-2">
+              Total Number of Symposium Attendees
+            </div>
+            <div class="card-content red-text flow-text" style="font-size:1.5vw;">
+              1223
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row" style="margin-bottom:0px;">
+        <div class="col s10 m5 offset-m1 offset-s1">
+          <div class="card z-depth-1 grey lighten-4" style="opacity: .87; height:20vh;">
             <div class="card-tabs">
-              <ul
-                class="tabs tabs-fixed-width valign-wrapper"
-                style="height:5vh;"
-              >
-                <li class="tab"><a>Training Levels</a></li>
+              <ul class="tabs tabs-fixed-width valign-wrapper" style="height:5vh;">
+                <li class="tab"><a>About the Symposium</a></li>
               </ul>
             </div>
-            <div class="card-content" style="height:32vh;">
-              <!-- <div id="barGraph-levels" class="bottom2"></div> -->
-              <div id="types" class="bottom2" style="height:100%;">
-                <svg id="line-chart"></svg>
+            <div style="margin-right:1vw; margin-left:1vw;">
+              <p class="grey-text text-darken-3" style="font-size:.9vw;" align="justify">The Natural Capital Symposium is a major convening of leaders advancing the science and practice of incorporating nature's diverse values into decisions. The
+                event
+                runs a
+                full program of
+                sessions from
+                Monday through Wednesday. The full program is split across three simultaneous tracks: Pathways to Impact, New Frontiers, and Approaches & Applications. Attendees are encouraged to pick and choose which sessions they would like to
+                attend.</p>
+            </div>
+          </div>
+          <div class="card z-depth-1 grey lighten-4" style="opacity: .87; height:33.40vh;">
+            <div class="card-tabs" onclick="redrawGraphs()">
+              <ul class="tabs tabs-fixed-width valign-wrapper" style="height:5vh;">
+                <!-- <li class="tab"><a>Versus Other Trainings</a></li> -->
+                <li class="tab">
+                  <a class="active" href="#test1">OVER THE Years</a>
+                </li>
+                <li class="tab">
+                  <a href="#barGraph-symposium">Symposium Attendees vs. Others</a>
+                </li>
+              </ul>
+            </div>
+            <div class="card-content" style="height:30vh;">
+              <div id="test1" class="bottom2" style="height:100%;">
+                <svg id="area-chart"></svg>
               </div>
+              <div id="barGraph-symposium" class="bottom2" style="height:100%;"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col s10 m5 offset-s1">
+          <div class="card z-depth-1 grey lighten-4" style="opacity: .87; height:50vh;">
+            <div class="card-tabs">
+              <ul class="tabs tabs-fixed-width valign-wrapper" style="height:5vh;">
+                <li class="tab"><a>Join Us next year!</a></li>
+              </ul>
+            </div>
+            <div style="height:100%">
+              <iframe style="position: relative; height: 100%; width: 100%;" src="https://www.youtube.com/embed/K-Imq0NEr8Y" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </div>
           </div>
         </div>
       </div>
     </div>
+  </div>
 
-    <script src="map.js"></script>
-    <script src="bargraph.js"></script>
-    <script src="line-chart.js"></script>
-    <script src="area-chart.js"></script>
-    <script type="text/javascript" src="scripts/materialize.min.js"></script>
-  </body>
+  <div class="last_row" style="height:100vh; overflow:hidden;">
+    <div class="row" style="height:0vh;"></div>
+    <h1 class="white-text text-darken-1" style="text-align: center; font-weight: bold;font-size:3vw;">
+      Explore Our Program
+    </h1>
+    <div class="row" style="margin-top:0px;">
+      <div class="col s10 m6 offset-m1 offset-s1">
+        <div class="card z-depth-1 grey lighten-4" style="opacity: .95; height:16.5vh;">
+          <div class="card-tabs">
+            <ul class="tabs tabs-fixed-width valign-wrapper" style="height:5vh;">
+              <li class="tab"><a>Explore</a></li>
+            </ul>
+          </div>
+          <div style="margin-right:1.5vw; margin-left:1.5vw;">
+            <p class="grey-text text-darken-3" style="font-size:.9vw;" align="justify">Use the map below to find out more about the distribution of training levels and training types. You can use the slider at the bottom of the map to view the data
+              year by year or across all the years. The graphs to the
+              right are linked to the world map to allow you to see the distributions across specific countries or the entire world. </p>
+          </div>
+        </div>
+        <div class=" card z-depth-1 grey lighten-4" style="opacity: .95;">
+          <div class="card-tabs">
+            <ul class="tabs tabs-fixed-width valign-wrapper" style="height:5vh;">
+              <li class="tab"><a>World Map</a></li>
+            </ul>
+          </div>
+          <div id="world-map" class="card-image worldmap" style="height:47.5vh;"></div>
+          <div class=" card-action scrolly grey">
+            <div class="row">
+              <div class="col s4">
+                <div class="switch" style="margin-top: -.6em;">
+                  <label class="white-text">
+                    Total
+                    <input type="checkbox" oninput="totalOrYears(this.checked)" />
+                    <span class="lever"></span> By Years
+                  </label>
+                </div>
+              </div>
+              <div class="col s8">
+                <div class="col s2" id="current-year">2018</div>
+                <div class="col s10">
+                  <form action="#">
+                    <p class="range-field" style="margin-top: -.8em;">
+                      <input type="range" class="yearslider" id="year-slider" min="2013" max="2018" oninput="yearChanged(this.value)" value="2018" />
+                    </p>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col s10 m4 offset-s1">
+        <div class="card z-depth-1 grey lighten-4" style="opacity: .95; height:37vh;">
+          <div class="card-tabs">
+            <ul class="tabs tabs-fixed-width valign-wrapper" style="height:5vh;">
+              <li class="tab"><a>Training Types</a></li>
+            </ul>
+          </div>
+          <div class="card-content" style="height:32vh;">
+            <div id="barGraph-type" class="graphs" style="height:100%;"></div>
+          </div>
+        </div>
+        <div class="card z-depth-1 grey lighten-4" style="opacity: .95; height:37vh;">
+          <div class="card-tabs">
+            <ul class="tabs tabs-fixed-width valign-wrapper" style="height:5vh;">
+              <li class="tab"><a>Training Levels</a></li>
+            </ul>
+          </div>
+          <div class="card-content" style="height:32vh;">
+            <!-- <div id="barGraph-levels" class="bottom2"></div> -->
+            <div id="types" class="bottom2" style="height:100%;">
+              <svg id="line-chart"></svg>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="map.js"></script>
+  <script src="bargraph.js"></script>
+  <script src="line-chart.js"></script>
+  <script src="area-chart.js"></script>
+  <script type="text/javascript" src="scripts/materialize.min.js"></script>
+</body>
+
 </html>
